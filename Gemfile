@@ -92,3 +92,6 @@ gem 'bootstrap_form', '~> 5.1'
 
 # User Authentication framework
 gem 'devise'
+
+# Font Awesome for icons
+gem "font-awesome-sass", "~> 6.4.0"

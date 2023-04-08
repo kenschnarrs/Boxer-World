@@ -9,6 +9,7 @@ class CreateItems < ActiveRecord::Migration[7.0]
       t.integer :num_in_stock, null: false, default: 0
       t.boolean :isFeatured, null: false, default: false
       t.decimal :rating, null: false, default: 0.0
+      t.string :name, null: false, default: ""
 
       t.timestamps
     end

@@ -1,11 +1,22 @@
 <h1>Search results for "<%= @query %>"</h1>
 
+<div class="container">
+  <div class="row row-cols-2">
 <% if @results.any? %>
-  <ul>
     <% @results.each do |result| %>
-      <li><%= result.name %></li>
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+  <img src="" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= result.name %></h5>
+    <p class="card-text">Description</p>
+    <a href="#" class="btn btn-primary">View</a>
+  </div>
+</div>
+    </div>
     <% end %>
-  </ul>
 <% else %>
   <p>No results found.</p>
 <% end %>
+</div>
+</div>

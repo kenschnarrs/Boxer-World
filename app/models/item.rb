@@ -7,6 +7,7 @@
 #  category     :string           default(""), not null
 #  image_path   :string           default(""), not null
 #  isFeatured   :boolean          default(FALSE), not null
+#  name         :string           default(""), not null
 #  num_in_stock :integer          default(0), not null
 #  price        :decimal(, )      default(0.0), not null
 #  rating       :decimal(, )      default(0.0), not null
@@ -15,4 +16,9 @@
 #  updated_at   :datetime         not null
 #
 class Item < ApplicationRecord
+
+    def self.search(name)
+        where("name LIKE ?", "%#{name}%")
+    end
+
 end

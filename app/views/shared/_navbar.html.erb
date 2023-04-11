@@ -28,8 +28,7 @@
     </div>
     <!-- Left Side -->
     <div>
-    <!-- Search -->
-    <!-- Cart -->
+    <!-- Cart --> 
     <div>
       <ul class="navbar-nav">
           <% if user_signed_in? %>
@@ -55,7 +54,11 @@
             </li>
           <% end %>
         </ul>
-      </div>  
+      </div>    
     <div>
   </div>
+  <!-- Search -->
+      <%= form_tag search_path, html: { class: "d-flex" }, method: :get do %>
+          <%= text_field_tag :query, params[:query], placeholder: "Search...", class: 'form-control me-2' %>
+      <% end %> 
 </nav>

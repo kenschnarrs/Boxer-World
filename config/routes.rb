@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root "pages#home"
   
   get 'home', to: 'pages#home', as: 'home'
+  get 'search', to: 'item#search', as: 'search'
 end

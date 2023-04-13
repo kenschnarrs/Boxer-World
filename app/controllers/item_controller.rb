@@ -5,4 +5,9 @@ class ItemController < ApplicationController
         @results = Item.where("name LIKE ?", "%#{@query}%")
     end
 
+    def show
+        @item = Item.find(params[:id])
+        render :show
+    end
+
 end

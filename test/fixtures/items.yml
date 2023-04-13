@@ -5,7 +5,6 @@
 #  id           :bigint           not null, primary key
 #  brand        :string           default(""), not null
 #  category     :string           default(""), not null
-#  image_data   :binary
 #  isFeatured   :boolean          default(FALSE), not null
 #  name         :string           default(""), not null
 #  num_in_stock :integer          default(0), not null

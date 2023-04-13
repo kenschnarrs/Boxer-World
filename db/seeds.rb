@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+
+#  !!!
+# PLEASE PUT ALL IMAGE ATTACHMENTS AT THE VERY BOTTOM
+#  !!!
+
 # Create a main sample user
 User.create!(
     email: "bob@email.com",
@@ -13,23 +18,36 @@ User.create!(
 )
 
 # Create sample items
-Item.create!(
+item1 = Item.create!(
     name: "Adult Gloves",
     brand: "Nike",
     category: "Boxing Gloves",
-    size: "Medium"
+    size: "Medium",
+    isFeatured: true,
+    num_in_stock: 50,
+    price: 50.00,
+    rating: 0
 )
 
-Item.create!(
-    name: "Teen Gloves",
+
+item2 = Item.create!(
+    name: "Kid Gloves",
     brand: "Nike",
     category: "Boxing Gloves",
-    size: "Large"
+    size: "Small",
+    isFeatured: true,
+    num_in_stock: 50,
+    price: 30.00,
+    rating: 0
+)
+item2.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
+    filename: 'adult_gloves.jpeg', 
+    content_type: 'image/jpeg'
+)
+item1.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
+    filename: 'adult_gloves.jpeg', 
+    content_type: 'image/jpeg'
 )
 
-Item.create!(
-    name: "Kids Gloves",
-    brand: "Nike",
-    category: "Boxing Gloves",
-    size: "Small"
-)

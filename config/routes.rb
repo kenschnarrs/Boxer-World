@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   
   get 'home', to: 'pages#home', as: 'home'
   get 'search', to: 'item#search', as: 'search'
+  get 'items', to: 'items#index', as: 'items'
+  get 'items/:id', to: 'item#show', as: 'item'
 end

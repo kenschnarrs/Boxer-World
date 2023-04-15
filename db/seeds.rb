@@ -14,7 +14,7 @@
 # Create a main sample user
 User.create!(
     email: "bob@email.com",
-    password: "something",
+    password: "something"
 )
 
 # Create sample items

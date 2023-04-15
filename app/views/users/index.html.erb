@@ -1,0 +1,17 @@
+<h1>User</h1>
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>User</th>
+      <th>>User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email%></td>
+         <td><%= link_to user.email, user_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

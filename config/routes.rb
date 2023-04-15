@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   get 'search', to: 'item#search', as: 'search'
   get 'items', to: 'items#index', as: 'items'
   get 'items/:id', to: 'item#show', as: 'item'
+
+  get 'users', to: 'users#index', as: 'users'
+  get 'users/:id/edit', to: 'users#edit', as: 'edit_user'
+  get 'users/:id', to: 'users#show', as: 'user'
+  patch 'users/:id', to: 'users#update'
+  
 end

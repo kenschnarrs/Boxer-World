@@ -1,0 +1,35 @@
+.a-primary:hover{
+    
+    color: red;
+}
+
+
+.a-primary{
+    
+background-color: white;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+    
+
+.row {
+    display: flex;
+  }
+  
+  /* Create three equal columns that sits next to each other */
+  .column {
+    flex: 25.33%;
+    padding: 9px;
+  }
+
+  .column2 {
+    flex: 25.33%;
+    padding: 5px;
+    float: left;
+  }
+

@@ -9,7 +9,7 @@ class CartItemsController < ApplicationController
         @cart_item = current_user.cart.cart_items.build(item_id: params[:id])
         if @cart_item.save
             flash[:success] = "Item added to cart!"
-            redirect_to cart_path(current_user.cart)
+            redirect_to cart_path
         else
             redirect_to root_path, alert: 'Error adding item to cart.'
         end

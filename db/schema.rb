@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_053808) do
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 

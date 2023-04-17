@@ -26,7 +26,8 @@ item1 = Item.create!(
     isFeatured: true,
     num_in_stock: 50,
     price: 50.00,
-    rating: 0
+    rating: 0,
+    description:"dfahds"
 )
 
 
@@ -38,20 +39,10 @@ item2 = Item.create!(
     isFeatured: true,
     num_in_stock: 50,
     price: 30.00,
-    rating: 0
+    rating: 0,
+    description:"Mauris non s tempus maximus. Interdum et malesuada fames ac psum primis in faucibus orci luctus et ultrices posuere cubilia curae; In fermentum risus eget mauris faucibus blandit. Pellentesque nec leo ut enim viverra consectetur vel quis mauris. Vestibulum ullamcorper, lacus auctor luctus condimentum, magna eros rutrum erat, quis sagittis mauris nisi id libero. Donec consectetur placerat lorem, eu aliquet turpis maximus a. Integer dignissim eros mi, quis feugiat lectus consequat quis. Nam laoreet, velit id euismod gravida, turpis arcu tempus leo, eu lobortis erat justo a eros. Mauris facilisis efficitur posuere. Cras semper felis ac odio auctor, sed lacinia ligula convallis. Nunc cursus lectus aliquam mauris scelerisque, sit amet porta leo laoreet. Aenean tincidunt aliquet velit, eget pretium nunc vehicula at. Donec vitae tortor arcu. Aliquam in massa ut elit condimentum interdum."
 )
 
-
-item3 = Item.create!(
-  name: "Adult Gloves",
-  brand: "Adidas",
-  category: "Boxing Gloves",
-  size: "Large",
-  isFeatured: false,
-  num_in_stock: 100,
-  price: 50.00,
-  rating: 4.5
-)
 
 # Item 2 (using the original format)
 item4 = Item.create!(
@@ -90,6 +81,23 @@ item6 = Item.create!(
 )
 
 
+item3 = Item.create!(
+    name: "Unisex Gloves",
+    brand: "Adidas",
+    category: "Boxing Gloves",
+    size: "Small",
+    isFeatured: true,
+    num_in_stock: 50,
+    price: 30.00,
+    rating: 0,
+    description:"fsas"
+)
+
+item3.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
+    filename: 'adult_gloves.jpeg', 
+    content_type: 'image/jpeg'
+)
 
 item2.picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 

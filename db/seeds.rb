@@ -43,6 +43,44 @@ item2 = Item.create!(
     description:"Mauris non s tempus maximus. Interdum et malesuada fames ac psum primis in faucibus orci luctus et ultrices posuere cubilia curae; In fermentum risus eget mauris faucibus blandit. Pellentesque nec leo ut enim viverra consectetur vel quis mauris. Vestibulum ullamcorper, lacus auctor luctus condimentum, magna eros rutrum erat, quis sagittis mauris nisi id libero. Donec consectetur placerat lorem, eu aliquet turpis maximus a. Integer dignissim eros mi, quis feugiat lectus consequat quis. Nam laoreet, velit id euismod gravida, turpis arcu tempus leo, eu lobortis erat justo a eros. Mauris facilisis efficitur posuere. Cras semper felis ac odio auctor, sed lacinia ligula convallis. Nunc cursus lectus aliquam mauris scelerisque, sit amet porta leo laoreet. Aenean tincidunt aliquet velit, eget pretium nunc vehicula at. Donec vitae tortor arcu. Aliquam in massa ut elit condimentum interdum."
 )
 
+
+# Item 2 (using the original format)
+item4 = Item.create!(
+  name: "Kid Gloves",
+  brand: "Nike",
+  category: "Boxing Gloves",
+  size: "Small",
+  isFeatured: true,
+  num_in_stock: 50,
+  price: 30.00,
+  rating: 0
+)
+
+# Item 3
+item5 = Item.create!(
+  name: "Training Gloves",
+  brand: "Everlast",
+  category: "Boxing Gloves",
+  size: "Medium",
+  isFeatured: true,
+  num_in_stock: 75,
+  price: 40.00,
+  rating: 3.8
+)
+
+# Item 4
+item6 = Item.create!(
+  name: "Competition Gloves",
+  brand: "Title Boxing",
+  category: "Boxing Gloves",
+  size: "Large",
+  isFeatured: false,
+  num_in_stock: 60,
+  price: 75.00,
+  rating: 4.9
+)
+
+
 item3 = Item.create!(
     name: "Unisex Gloves",
     brand: "Adidas",

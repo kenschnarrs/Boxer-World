@@ -4,16 +4,16 @@
   <div class="row row-cols-2">
 <% if @results.any? %>
     <% @results.each do |result| %>
-      <div class="col">
-          <div class="card" style="width: 18rem;">
-            <img src="" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"><%= result.name %></h5>
-                <p class="card-text">Description</p>
-                <a href="" class="btn"><%= link_to 'View', item_path(result) %></a>
-              </div>
-          </div>
-      </div>
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+  <img src="<%= url_for(result.picture) %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= result.name %></h5>
+    <p class="card-text">$<%= "#{result.price}" %></p>
+    <a href="" class="btn"><%= link_to 'View', item_path(result) %></a>
+  </div>
+</div>
+    </div>
     <% end %>
 <% else %>
   <p>No results found.</p>

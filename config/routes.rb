@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   root "pages#home"
   
   get 'home', to: 'pages#home', as: 'home'
+  get 'boxing_gloves', to: 'pages#boxing_gloves', as: 'boxing_gloves'
+  get 'punching_bags', to: 'pages#punching_bags', as: 'punching_bags'
+  get 'apparel', to: 'pages#apparel', as: 'apparel'
+
   get 'search', to: 'item#search', as: 'search'
   get 'items', to: 'items#index', as: 'items'
   get 'items/:id', to: 'item#show', as: 'item'

@@ -55,24 +55,75 @@ item3 = Item.create!(
     price: 30.00,
     rating: 0,
     description:"fsas"
-    
 )
 
-item3.picture.attach(
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
-    filename: 'adult_gloves.jpeg', 
-    content_type: 'image/jpeg'
-   
+
+# Item 2 (using the original format)
+item4 = Item.create!(
+  name: "Little Kid Gloves",
+  brand: "Nike",
+  category: "Boxing Gloves",
+  size: "Small",
+  isFeatured: false,
+  num_in_stock: 50,
+  price: 30.00,
+  rating: 0
 )
 
-item2.picture.attach(
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
-    filename: 'adult_gloves.jpeg', 
-    content_type: 'image/jpeg'
+# Item 3
+item5 = Item.create!(
+  name: "Training Gloves",
+  brand: "Everlast",
+  category: "Boxing Gloves",
+  size: "Medium",
+  isFeatured: false,
+  num_in_stock: 75,
+  price: 40.00,
+  rating: 3.8
 )
+
+# Item 4
+item6 = Item.create!(
+  name: "Super Gloves",
+  brand: "Title Boxing",
+  category: "Boxing Gloves",
+  size: "Large",
+  isFeatured: false,
+  num_in_stock: 60,
+  price: 75.00,
+  rating: 4.9
+)
+
+
 item1.picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
     filename: 'adult_gloves.jpeg', 
     content_type: 'image/jpeg'
 )
+item2.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
+    filename: 'adult_gloves.jpeg', 
+    content_type: 'image/jpeg'
+)
+item3.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
+    filename: 'adult_gloves.jpeg', 
+    content_type: 'image/jpeg'
+)
+item4.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
+    filename: 'adult_gloves.jpeg', 
+    content_type: 'image/jpeg'
+)
+item5.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
+    filename: 'adult_gloves.jpeg', 
+    content_type: 'image/jpeg'
+)
+item6.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'adult_gloves.jpeg')), 
+    filename: 'adult_gloves.jpeg', 
+    content_type: 'image/jpeg'
+)
+
 

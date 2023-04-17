@@ -58,7 +58,7 @@ item3 = Item.create!(
 
 # Item 2 (using the original format)
 item4 = Item.create!(
-  name: "Kid Gloves",
+  name: "Little Kid Gloves",
   brand: "Nike",
   category: "Boxing Gloves",
   size: "Small",
@@ -82,7 +82,7 @@ item5 = Item.create!(
 
 # Item 4
 item6 = Item.create!(
-  name: "Competition Gloves",
+  name: "Super Gloves",
   brand: "Title Boxing",
   category: "Boxing Gloves",
   size: "Large",

@@ -16,11 +16,26 @@
 #  updated_at   :datetime         not null
 #
 class Item < ApplicationRecord
+
+    has_many(
+        :reviews,
+        class_name:  'Review',
+        foreign_key: 'item_id',
+        inverse_of:  :item,
+        dependent:   :destroy
+      )
+
+    #   validates :reviews, presence: true
+
+
     has_one_attached :picture
 
 
     def self.search(name)
         where("name LIKE ?", "%#{name}%")
     end
+
+
+
 
 end

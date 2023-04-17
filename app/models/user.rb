@@ -50,4 +50,11 @@ class User < ApplicationRecord
           dependent:   :destroy
         )
 
+        has_one(
+          :cart,
+          class_name: 'Cart',
+          foreign_key: 'user_id',
+          inverse_of:  :user,
+        )
+
 end

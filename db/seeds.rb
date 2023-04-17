@@ -60,7 +60,7 @@ item3 = Item.create!(
 
 # Item 2 (using the original format)
 item4 = Item.create!(
-  name: "Little Kid Gloves",
+  name: "Tech Gloves",
   brand: "Nike",
   category: "Boxing Gloves",
   size: "Small",

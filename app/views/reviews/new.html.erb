@@ -1,0 +1,8 @@
+<h1>Add a Review</h1>
+<%= bootstrap_form_with model: @review, method: :post, url: item_reviews_path(@item), data: { turbo: false } do |f| %>
+  <%= f.number_field :rating,in: 1.0..10.0%>
+  <%= f.text_area :review_text,minlength: 30, maxlength:100, hint:"You can only use 100 characters!" %>
+  <%= f.submit  %>
+
+
+<% end %>

@@ -2,25 +2,17 @@
 
 <h1><%= @item.name %> | <%= @item.brand %></h1>
 
-
- 
 <div class="row">
   <div class="column">
     <%= image_tag @item.picture %>
   </div>
   <div class="column">
-  <div class="columnT">
-         <h1>Description</h1>
-    <%= @item.description %>
-    
+        <h3>Description</h3>
+        <p style="font-size: 18px;"><%= @item.description %></p>
+        <%= link_to 'Reviews', item_reviews_path(@item), class: 'btn btn-outline-secondary btn-lg'%>
+        <%= link_to 'Add To Cart',  add_to_cart_path(@item.id), data: { "turbo-method": :post }, class: 'btn btn-outline-primary btn-lg' %>
   </div>
-  </div>
-  <h3>
-      <%= link_to 'Reviews', item_path,class: "a-primary"%> | <%= link_to 'Add to Cart', item_path,class: "a-primary"%>
-  </h3>   
-   
 </div>
-
 
 
 

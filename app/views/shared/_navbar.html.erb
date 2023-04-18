@@ -35,9 +35,10 @@
       <ul class="navbar-nav">
           <% if user_signed_in? %>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+            <a class="nav-link" href="/cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
           </li>
           
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Settings
@@ -45,7 +46,7 @@
             <ul class="dropdown-menu">
             <!-- Calvin Gott, Dropdown menu, takes a user to user page, and then allows them to go to necessary pages for Editing-->
               <li><a class="dropdown-item" href ="/users">Settings</a></li>
-          </li>
+          
             <li class="nav-item">
               <%= button_to 'Sign Out', destroy_user_session_path,
                           method: :delete, data: { turbo: false }, class: 'nav-link btn btn-link' %>

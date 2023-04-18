@@ -26,9 +26,13 @@ Rails.application.routes.draw do
   # get 'items/:item_id/reviews', to: 'reviews#show', as: 'item_review'
 
   get 'users', to: 'users#index', as: 'users'
-  get 'users/:id/edit', to: 'users#edit', as: 'edit_user'
+  get 'user/edit', to: 'users#edit', as: 'edit_user'
   get 'users/:id', to: 'users#show', as: 'user'
-  patch 'users/:id', to: 'users#update'
+  patch 'user_profile', to: 'users#update_profile', as: 'user_profile_update'
+  get 'users/:id/billing', to: 'users#billing', as: 'billing_user'
+  get 'user', to: 'users#profile', as: 'user_profile'
+  patch 'user', to: 'users#update', as: 'user_update'  
 
-
+  
+  
 end

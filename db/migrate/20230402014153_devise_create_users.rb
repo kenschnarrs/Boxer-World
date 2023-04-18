@@ -10,6 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
       ## Identifying fields
       t.string :name, null: false, default: ""
+      t.string :username, null: false, default: ""
       t.string :address, null: false, default: ""
       t.string :phone, null: false, default: ""
       t.text :blurb, null: false, default: ""

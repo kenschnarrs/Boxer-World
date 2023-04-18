@@ -13,8 +13,36 @@
 
 # Create a main sample user
 User.create!(
+    name: "Bob",
+    username: "The Ice Sickle",
     email: "bob@email.com",
-    password: "something"
+    phone:"901-555-5555",
+    password:"something",
+    address: "3632 MerriGo Lane",
+    blurb: "Hi",
+    card_num: 0,
+    exp_month: 0,
+    exp_year: 0,
+    cvc: 0
+)
+#
+#Calvin Gott   
+#created a sample user class
+#Upaded the User Model with name, username, phone,address,blurb.card_num,exp_month,exp_year
+#
+user1 = User.create!(
+    name: "Mike Tyson",
+    username: "Iron Mike",
+    email: "MikeT@email.com",
+    phone:"929-292-5555",
+    password:"Password",
+    address: "Champs Lane",
+    blurb: "Goat",
+    card_num: 0,
+    exp_month: 0,
+    exp_year: 0,
+    cvc: 0
+
 )
 
 # Create sample items

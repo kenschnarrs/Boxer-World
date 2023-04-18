@@ -1,6 +1,18 @@
-<h1>Edit User Profile </h1>
-<%= bootstrap_form_with model: @user, url: user_path(@user), method: :patch, data: { turbo: false } do |f| %>
+  <!-- Calvin Gott, Dropdown menu, takes a user to settings page, and then allows them to update personal infomation-->
+
+<h1>Hello <%=@user.name%></h1>
+<strong>Update your billing and shipping information here</strong> 
+<%= bootstrap_form_with model: @user, url: user_update_path, method: :patch, data: { turbo: false } do |f| %>
+  <%= f.text_field :name%>
   <%= f.text_field :email %>
-  <%= f.text_field :password %>
+  <%= f.text_field :phone %>
+  <%= f.text_field :address%>
+  <%= f.number_field :card_num%>
+  <%= f.number_field :cvc %>
+  <%= f.number_field :exp_month %>
+  <%= f.number_field :exp_year%>
   <%= f.submit %>
+
 <% end %>
+
+

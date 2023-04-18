@@ -3,18 +3,8 @@
     <title>User Customization</title>
   
   </head>
-<h1> User Customization </h1>
-<strong>Welcome <%=@user.username%></strong> 
+<h1>Welcome <%=@user.username%></h1> 
 
-<p>
-
-  You can Change your Username and Bio Below
-</p>
-<%= bootstrap_form_with model: @user, url: users_path(@user), method: :patch, data: { turbo: false } do |f| %>
-  <%= f.text_field :username %>
-  <%= f.text_area :blurb %>
-  <%= f.submit %>
-<% end %>
 
 
 

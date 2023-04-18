@@ -1,17 +1,30 @@
-<h1>User</h1>
+<head>
+    <title> Settings</title>
+  
+  </head>
+<h1> Settings </h1>
+<strong>  You can Change your Settings Here </strong> 
+
 <table class="table table-hover">
   <thead class="table-dark">
     <tr>
-      <th>User</th>
-      <th>User</th>
+      <th>Username</th>
+      <th>Customization</th>
+      <th>Settings</th>
+      <th>Billing</th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.email%></td>
-         <td><%= link_to user.email, user_path(user) %></td>
+        <td><%= user.username%>
+        <td><%= link_to 'Customzation', user_path(user) %></td>
+        <td><%= link_to 'Settings', edit_user_path(user)%></td>
+        <td><%= link_to "Billing", billing_user_path(user) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+

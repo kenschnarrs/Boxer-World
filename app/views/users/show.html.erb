@@ -1,11 +1,24 @@
-
-<h1><%= @user %></h1>
-<p>
+  <!-- Calvin Gott, Dropdown menu, takes a user to show page, and then allows them to update username and blurd-->
+<head>
+    <title>User Customization</title>
   
-</p>
+  </head>
+<h1> User Customization </h1>
+<strong>Welcome <%=@user.username%></strong> 
+
 <p>
-  <%= @user.email %>
+
+  You can Change your Username and Bio Below
 </p>
-<p>
-<%=  link_to 'Edit', edit_user_path %>
-</p>
+<%= bootstrap_form_with model: @user, url: users_path(@user), method: :patch, data: { turbo: false } do |f| %>
+  <%= f.text_field :username %>
+  <%= f.text_area :blurb %>
+  <%= f.submit %>
+<% end %>
+
+
+
+
+
+
+

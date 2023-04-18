@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   get 'users/:id/edit', to: 'users#edit', as: 'edit_user'
   get 'users/:id', to: 'users#show', as: 'user'
   patch 'users/:id', to: 'users#update'
+  get 'users/:id/billing', to: 'users#billing', as: 'billing_user'
+
+  
   
 end

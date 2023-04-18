@@ -9,7 +9,7 @@
   <thead class="table-dark">
     <tr>
       <th>Name</th>
-      <th>Customization</th>
+      <th>Profile</th>
       <th>Settings</th>
       <th>Billing</th>
     </tr>
@@ -18,7 +18,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name%></td>
-        <td><%= link_to 'Nickname', user_path(user) %></td>
+        <td><%= link_to 'Profile', user_path(user) %></td>
         <td><%= link_to 'Settings', edit_user_path(user)%></td>
         <td><%= link_to "Billing", billing_user_path(user) %></td>
       </tr>

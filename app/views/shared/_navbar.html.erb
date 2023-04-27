@@ -45,9 +45,6 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href ="/user">Profile </a></li>
-              <li><a class="dropdown-item" href ="/user/edit">User Settings </a></li>
-              <li><a class="dropdown-item" href ="/user">Profile Settings</a></li>
-              <li><a class="dropdown-item" href = "/users/edit">Account Settings</a></li>
             </ul>
           
             <li class="nav-item">
@@ -60,8 +57,7 @@
                           class: "nav-link #{active_class(new_user_session_path)} btn btn-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Sign Up', new_user_registration_path,
-                          class: "nav-link #{active_class(new_user_registration_path)} btn btn-link" %>
+            <!-- TODO: Figure out the correct path for changing password -->
             </li>
           <% end %>
         </ul>

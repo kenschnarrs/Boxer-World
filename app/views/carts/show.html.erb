@@ -8,18 +8,38 @@
   <div style="width: 70%;">
     <h3>Cart</h3>
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 10px;" >
+
         <% total = 0%>
-        <%if @cart&.cart_items&.any? %> 
-          <% for cart_item in @cart.cart_items %>
-              <%item = cart_item.item%>
+
+        <!-- This guarantees the cart items are uniquely displayed. -->
+        <%if @cart&.cart_items&.any? %>
+          <% unique_items = {} %>
+          <% @cart.cart_items.each do |cart_item| %>
+            <% if unique_items[cart_item.item_id] %>
+              <%unique_items[cart_item.item_id]["quantity"] += cart_item.quantity%>
+            <%else%>
+              <%cart_item_hash = {
+                "item" => cart_item.item,
+                "quantity" => cart_item.quantity,
+              } %>
+              <% unique_items[cart_item.item_id] = cart_item_hash %>
+            <% end %>
+          <% end %>
+
+          <%unique_items.each do |item_id, cart_item_hash|%>
+            <%item = cart_item_hash["item"]%>
+            <%quantity = cart_item_hash["quantity"]%>
               <div class="p-3">
                   <div class="card" style="width: 8rem;">
                       <%= image_tag item.picture %>
                       <div class="card-body d-flex justify-content-center align-items-center flex-column">
                           <h5 class="card-title text-center"><%= item.name %></h5>
                           <h6><%=number_to_currency(item.price)%></h6>
-                          <%total = total + item.price%>
-                          <a href="" class="btn"><%= link_to 'View', item_path(item) %></a>
+                          <p>Amount: <%=quantity%><a href="" class="btn-secondary"><%= link_to '+', cart_path %></a>
+                          <%total = (total + item.price) * quantity%>
+                          <a href="" class="btn-primary"><%= link_to 'View', item_path(item) %></a>
+                          <a href="" class="btn-success"><%= link_to 'Delete', cart_path %></a>
+
                       </div>
                   </div>
               </div>

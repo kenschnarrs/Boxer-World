@@ -2,7 +2,7 @@
 
 <h1>Hello <%=@user.name%></h1>
 <strong>Update your billing and shipping information here</strong> 
-<%= bootstrap_form_with model: @user, url: user_update_path, method: :patch, data: { turbo: false } do |f| %>
+<%= bootstrap_form_with model: @user, url: cart_checkout_post_path, method: :patch, data: { turbo: false } do |f| %>
   <%= f.text_field :name%>
   <%= f.text_field :email %>
   <%= f.text_field :phone %>

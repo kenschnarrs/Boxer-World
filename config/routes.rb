@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get 'cart', to: 'carts#show', as: 'cart'
   get 'cart/checkout', to: 'carts#checkout', as: 'cart_checkout'
-  post 'cart/checkout', to: 'carts#execute_transaction'
+  post 'cart/checkout', to: 'carts#execute_transaction', as: 'cart_checkout_post'
 
   get 'items/:item_id/reviews', to: 'reviews#index', as: 'item_reviews'
   post 'items/:item_id/reviews', to: 'reviews#create'

@@ -1,0 +1,8 @@
+<h1>Edit Item Amount in Cart</h1>
+<%= bootstrap_form_with model: @cart_item, url: cart_item_edit_patch_path, method: :patch, data: { turbo: false } do |f| %>
+    <div>
+        <%= f.number_field :quantity%>
+    </div>
+  <%= f.submit %>
+
+<% end %>

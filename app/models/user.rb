@@ -38,7 +38,30 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
+
+  before_create :set_defaults
   
+  def set_defaults
+    self.username ||= generate_unique_username
+  end
+
+  def generate_unique_username
+    base_username = self.name.parameterize(separator: '_')
+    username = base_username.dup
+    num = 1
+
+    while self.class.exists?(username: username)
+      username = "#{base_username}_#{num}"
+      num += 1
+    end
+
+    username
+  end
+
+  
+
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

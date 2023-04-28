@@ -8,8 +8,6 @@ class CartItemsController < ApplicationController
         end
 
         item_id = params[:id]
-
-
         cart_item = current_user.cart.cart_items.find_by(item_id: item_id)
         
         if cart_item.present?
@@ -25,6 +23,13 @@ class CartItemsController < ApplicationController
         else
             redirect_to root_path, alert: 'Error adding item to cart.'
         end
+    end
+
+    def delete
+        @cart_item = CartItem.find(params[:id])
+        @cart_item.destroy
+        flash[:success] = 'Item removed from cart.'
+        redirect_to cart_url, status: :see_other
     end
 
     def edit

@@ -30,11 +30,6 @@ class UsersController < ApplicationController
         end
     end
 
-    def billing
-      @user = current_user
-      render :billing
-    end
-
     def profile
       @user = current_user
       render :profile

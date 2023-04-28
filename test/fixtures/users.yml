@@ -5,7 +5,7 @@
 #  id                     :bigint           not null, primary key
 #  apt_num                :integer          default(0), not null
 #  blurb                  :text             default(""), not null
-#  card_num               :integer          default(0), not null
+#  card_num               :bigint           default(0), not null
 #  city                   :string           default(""), not null
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string

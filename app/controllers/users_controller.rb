@@ -18,20 +18,21 @@ class UsersController < ApplicationController
         render :edit
     end
 
+    # This is the currently used update method.
     def update
-        @user = current_user
-        if @user.update(params.require(:user).permit(:name,:email, :phone, :address,:card_num, :cvc, :exp_month, :exp_year))
-          flash[:success] = 'Your Account updated!'
-          redirect_to root_path
+        if current_user.update(user_update_params)
+          flash[:success] = 'Updated successfully!'
+          redirect_to user_profile_path
         else
-          flash.now[:error] = 'Your Account updated failed'
+          flash.now[:error] = 'Your update failed!'
+          @user = current_user
           render :edit, status: :unprocessable_entity
         end
     end
 
     def billing
-        @user = current_user
-        render :billing
+      @user = current_user
+      render :billing
     end
 
     def profile
@@ -39,15 +40,25 @@ class UsersController < ApplicationController
       render :profile
     end
 
-    def update_profile
-      @user = current_user
-      if @user.update(params.require(:user).permit(:username, :blurb))
-        flash[:success] = 'Your Account updated!'
-        redirect_to root_path
-      else
-        flash.now[:error] = 'Your Account updated failed'
-        render :edit, status: :unprocessable_entity
-      end
+    private
+    def user_update_params
+      params.require(:user).permit(
+          :username, 
+          :blurb,
+          :first_name, 
+          :last_name,
+          :phone,
+          :card_num,
+          :cvc,
+          :exp_month,
+          :exp_year,
+          :apt_num,
+          :street_address,
+          :city,
+          :zip_code,
+          :state,
+          :country
+      )
     end
     
 end

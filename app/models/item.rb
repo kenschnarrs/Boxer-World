@@ -34,8 +34,8 @@ class Item < ApplicationRecord
     )
 
     has_many(
-      :transaction_items,
-      class_name:  'TransactionItem',
+      :payment_items,
+      class_name:  'PaymentItem',
       foreign_key: 'item_id',
       inverse_of:  :item,
       dependent:   :destroy

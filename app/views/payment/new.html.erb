@@ -1,7 +1,7 @@
 <!-- Ken Schnarrs -->
 <h1>Check Out</h1>
 
-<%= bootstrap_form_with model: @transaction, url: create_transaction_path, method: :post, data: { turbo: false } do |f| %>
+<%= bootstrap_form_with model: @payment, url: create_payment_path, method: :post, data: { turbo: false } do |f| %>
   <div class="row">
     <div class="col-sm">
     <h4>Billing Information</h4>
@@ -11,12 +11,10 @@
         <%= f.number_field :cvc, value: @user.cvc%>
         <%= f.number_field :exp_month, value: @user.exp_month%>
         <%= f.number_field :exp_year, value: @user.exp_year%>
-        
-
     </div>
     <div class="col-sm">
         <h4>Shipping Information</h4>
-        <%= f.number_field :apt_num, value: @user.apt_num%>
+        <%= f.number_field :apt_number, value: @user.apt_num%>
         <%= f.text_field :street_address, value: @user.street_address%>
         <%= f.text_field :city, value: @user.city%>
         <%= f.number_field :zip_code, value: @user.zip_code%>
@@ -39,9 +37,4 @@
         <%= f.submit "Place Order", class: "btn btn-success btn-lg" %>
     </div>
   </div>
-
-  
-
-
-
 <% end %>

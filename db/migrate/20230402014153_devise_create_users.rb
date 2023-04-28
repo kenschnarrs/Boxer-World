@@ -14,7 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :address, null: false, default: ""
       t.string :phone, null: false, default: ""
       t.text :blurb, null: false, default: ""
-      t.integer :card_num, null: false, default: 0
+      t.bigint :card_num, null: false, default: 0
       t.integer :cvc, null: false, default: 0
       t.integer :exp_month, null: false, default: 0
       t.integer :exp_year, null: false, default: 0

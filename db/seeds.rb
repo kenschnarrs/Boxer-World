@@ -13,10 +13,10 @@
 
 # Create a main sample user
 user0 = User.create!(
-    first_name: "Bob",
+    first_name: "Mike",
     last_name: "Tyson",
     username: "The Ice Sickle",
-    email: "bob@email.com",
+    email: "mike@email.com",
     phone:"901-555-5555",
     password:"something",
     street_address: "Champs Lane",
@@ -24,11 +24,11 @@ user0 = User.create!(
     zip_code: 12345,
     state: "Champs State",
     country: "Champs Country",
-    blurb: "Hi, I\'m Bob.",
-    card_num: 0,
-    exp_month: 0,
-    exp_year: 0,
-    cvc: 0
+    blurb: "Hi, I\'m Joe.",
+    card_num: 4929530607600026,
+    exp_month: 12,
+    exp_year: 2024,
+    cvc: 303
 )
 #
 #Calvin Gott   
@@ -39,7 +39,7 @@ user1 = User.create!(
     first_name: "Mike",
     last_name: "Tyson",
     username: "Iron Mike",
-    email: "MikeT@email.com",
+    email: "MikeTysonGOAT@email.com",
     phone:"929-292-5555",
     password:"Password",
     street_address: "Champs Lane",
@@ -48,10 +48,10 @@ user1 = User.create!(
     state: "Champs State",
     country: "Champs Country",
     blurb: "Goat",
-    card_num: 0,
-    exp_month: 0,
-    exp_year: 0,
-    cvc: 0
+    card_num: 4929530607600026,
+    exp_month: 1,
+    exp_year: 2029,
+    cvc: 111
 
 )
 

@@ -54,7 +54,7 @@
     <h3>Total: <%=number_to_currency(total)%></h3>
     <%if @cart&.cart_items&.any? %>
       <div class="card-body d-flex justify-content-center align-items-center flex-column">
-        <%= link_to 'CHECKOUT', new_transaction_path, class: 'btn btn-outline-primary btn-lg mt-5' %>
+        <%= link_to 'CHECKOUT', new_payment_path, class: 'btn btn-outline-success btn-lg mt-5' %>
       </div>
     <% end %>
 

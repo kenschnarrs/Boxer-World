@@ -12,14 +12,19 @@
 #  !!!
 
 # Create a main sample user
-User.create!(
-    name: "Bob",
+user0 = User.create!(
+    first_name: "Bob",
+    last_name: "Tyson",
     username: "The Ice Sickle",
     email: "bob@email.com",
     phone:"901-555-5555",
     password:"something",
-    address: "3632 MerriGo Lane",
-    blurb: "Hi",
+    street_address: "Champs Lane",
+    city: "Champs City",
+    zip_code: 12345,
+    state: "Champs State",
+    country: "Champs Country",
+    blurb: "Hi, I\'m Bob.",
     card_num: 0,
     exp_month: 0,
     exp_year: 0,
@@ -31,12 +36,17 @@ User.create!(
 #Upaded the User Model with name, username, phone,address,blurb.card_num,exp_month,exp_year
 #
 user1 = User.create!(
-    name: "Mike Tyson",
+    first_name: "Mike",
+    last_name: "Tyson",
     username: "Iron Mike",
     email: "MikeT@email.com",
     phone:"929-292-5555",
     password:"Password",
-    address: "Champs Lane",
+    street_address: "Champs Lane",
+    city: "Champs City",
+    zip_code: 12345,
+    state: "Champs State",
+    country: "Champs Country",
     blurb: "Goat",
     card_num: 0,
     exp_month: 0,

@@ -16,7 +16,7 @@
               <%= link_to "Edit Information", edit_user_path, class: 'btn btn-outline-primary me-1' %>
             </div>
             <div class="d-flex justify-content-center mb-2">
-            <%= link_to "Change Password", edit_registration_path(@user), class: 'btn btn-outline-primary me-1' %>
+            <%= link_to "Change Credentials", edit_registration_path(@user), class: 'btn btn-outline-primary me-1' %>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
                 <p class="mb-0">Username</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><%=%></p>
+                <p class="text-muted mb-0"><%=@user.username%></p>
               </div>
             </div>
             <hr>
@@ -58,10 +58,10 @@
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Address</p>
+                <p class="mb-0">Location</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><%= @user.address %></p>
+                <p class="text-muted mb-0"><%= @user.city %>, <%= @user.country %></p>
               </div>
             </div>
           </div>

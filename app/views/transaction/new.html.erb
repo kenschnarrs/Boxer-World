@@ -1,0 +1,47 @@
+<!-- Ken Schnarrs -->
+<h1>Check Out</h1>
+
+<%= bootstrap_form_with model: @transaction, url: create_transaction_path, method: :post, data: { turbo: false } do |f| %>
+  <div class="row">
+    <div class="col-sm">
+    <h4>Billing Information</h4>
+        <%= f.text_field :first_name, value: @user.first_name%>
+        <%= f.text_field :last_name, value: @user.last_name%>
+        <%= f.number_field :card_num, value: @user.card_num%>
+        <%= f.number_field :cvc, value: @user.cvc%>
+        <%= f.number_field :exp_month, value: @user.exp_month%>
+        <%= f.number_field :exp_year, value: @user.exp_year%>
+        
+
+    </div>
+    <div class="col-sm">
+        <h4>Shipping Information</h4>
+        <%= f.number_field :apt_num, value: @user.apt_num%>
+        <%= f.text_field :street_address, value: @user.street_address%>
+        <%= f.text_field :city, value: @user.city%>
+        <%= f.number_field :zip_code, value: @user.zip_code%>
+        <%= f.text_field :state, value: @user.state%>
+        <%= f.text_field :country, value: @user.country%>
+    </div>
+    <div class="col-sm">
+        <h4>Submit your Order</h4>
+        <% total = 0 %>
+        <% @user.cart.cart_items.each do |cart_item| %>
+          <% total = total + (cart_item.item.price * cart_item.quantity)%>
+        <% end %>
+        <p>
+          Subtotal: <%=number_to_currency(total)%><br>
+          Tax: <%=number_to_currency(total * 1.125 - total)%><br>
+          Shipping: <%=number_to_currency(5)%><br>
+          Total: <%=number_to_currency(total * 1.125 + 5)%>
+        </p>
+        <%= link_to 'Back to Cart', cart_path, class: 'btn btn-outline-danger btn-lg' %>
+        <%= f.submit "Place Order", class: "btn btn-success btn-lg" %>
+    </div>
+  </div>
+
+  
+
+
+
+<% end %>

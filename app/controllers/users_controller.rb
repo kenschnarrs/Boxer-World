@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 #Calvin Gott -  created the User Contrller class, to have User Actions
+    before_action :authenticate_user!
 
     def index
         @users = User.order(:email)

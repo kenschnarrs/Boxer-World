@@ -1,16 +1,32 @@
   <!-- Calvin Gott, Dropdown menu, takes a user to settings page, and then allows them to update personal infomation-->
 
-<h1>Hello <%=@user.name%></h1>
-<strong>Update your billing and shipping information here</strong> 
-<%= bootstrap_form_with model: @user, url: cart_checkout_post_path, method: :patch, data: { turbo: false } do |f| %>
-  <%= f.text_field :name%>
-  <%= f.text_field :email %>
-  <%= f.text_field :phone %>
-  <%= f.text_field :address%>
-  <%= f.number_field :card_num%>
-  <%= f.number_field :cvc %>
-  <%= f.number_field :exp_month %>
-  <%= f.number_field :exp_year%>
+<h1>Hello <%=@user.first_name%></h1>
+<strong>Update your user information here.</strong> 
+<%= bootstrap_form_with model: @user, url: user_profile_update_path, method: :patch, data: { turbo: false } do |f| %>
+  <div class="row">
+    <div class="col-sm">
+        <h4>Personal Information</h4>
+        <%= f.text_field :first_name, value: @user.first_name%>
+        <%= f.text_field :last_name, value: @user.last_name%>
+        <%= f.text_field :phone, value: @user.phone %>
+    </div>
+    <div class="col-sm">
+        <h4>Billing Information</h4>
+        <%= f.number_field :card_num, value: @user.card_num%>
+        <%= f.number_field :cvc, value: @user.cvc%>
+        <%= f.number_field :exp_month, value: @user.exp_month%>
+        <%= f.number_field :exp_year, value: @user.exp_year%>
+    </div>
+    <div class="col-sm">
+        <h4>Shipping Information</h4>
+        <%= f.number_field :apt_num, value: @user.apt_num%>
+        <%= f.text_field :street_address, value: @user.street_address%>
+        <%= f.text_field :city, value: @user.city%>
+        <%= f.number_field :zip_code, value: @user.zip_code%>
+        <%= f.text_field :state, value: @user.state%>
+        <%= f.text_field :country, value: @user.country%>
+    </div>
+  </div>
   <%= f.submit %>
 
 <% end %>

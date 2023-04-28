@@ -46,7 +46,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href ="/user">Profile</a></li>
             </ul>
-          
+
             <li class="nav-item">
               <%= button_to 'Sign Out', destroy_user_session_path,
                           method: :delete, data: { turbo: false }, class: 'nav-link btn btn-link' %>
@@ -57,7 +57,8 @@
                           class: "nav-link #{active_class(new_user_session_path)} btn btn-link" %>
             </li>
             <li class="nav-item">
-            <!-- TODO: Figure out the correct path for changing password -->
+              <%= link_to 'Sign Up', new_user_registration_path,
+                          class: "nav-link #{active_class(new_user_registration_path)} btn btn-link" %>
             </li>
           <% end %>
         </ul>

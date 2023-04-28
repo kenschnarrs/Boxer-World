@@ -17,7 +17,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name%></td>
+        <td><%= user.first_name%></td>
         <td><%= link_to 'Profile', user_path(user) %></td>
         <td><%= link_to 'Settings', edit_user_path(user)%></td>
         <td><%= link_to "Billing", billing_user_path(user) %></td>

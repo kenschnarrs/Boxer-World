@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_053808) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_28_082840) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_053808) do
   create_table "cart_items", force: :cascade do |t|
     t.bigint "cart_id", null: false
     t.bigint "item_id", null: false
-    t.integer "quantity"
+    t.integer "quantity", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
@@ -74,6 +74,35 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_053808) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "payment_items", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.integer "quantity"
+    t.bigint "payment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_payment_items_on_item_id"
+    t.index ["payment_id"], name: "index_payment_items_on_payment_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "apt_number"
+    t.string "street_address"
+    t.string "city"
+    t.integer "zip_code"
+    t.string "state"
+    t.string "country"
+    t.bigint "card_num"
+    t.integer "cvc"
+    t.integer "exp_month"
+    t.integer "exp_year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "review_text"
@@ -88,12 +117,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_053808) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "name", default: "", null: false
     t.string "username", default: "", null: false
-    t.string "address", default: "", null: false
     t.string "phone", default: "", null: false
     t.text "blurb", default: "", null: false
-    t.integer "card_num", default: 0, null: false
+    t.bigint "card_num", default: 0, null: false
     t.integer "cvc", default: 0, null: false
     t.integer "exp_month", default: 0, null: false
     t.integer "exp_year", default: 0, null: false
@@ -114,6 +141,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_053808) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "street_address", default: "", null: false
+    t.string "city", default: "", null: false
+    t.string "state", default: "", null: false
+    t.integer "zip_code", default: 0, null: false
+    t.string "country", default: "", null: false
+    t.integer "apt_num", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -123,6 +158,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_053808) do
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "items"
   add_foreign_key "carts", "users"
+  add_foreign_key "payment_items", "items"
+  add_foreign_key "payment_items", "payments"
+  add_foreign_key "payments", "users"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"
 end

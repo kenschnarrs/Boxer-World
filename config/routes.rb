@@ -17,19 +17,23 @@ Rails.application.routes.draw do
   get 'items/:id', to: 'item#show', as: 'item'
 
   get 'cart', to: 'carts#show', as: 'cart'
-  get 'cart/checkout', to: 'carts#checkout', as: 'cart_checkout'
-  post 'cart/checkout', to: 'carts#execute_transaction'
+  get '/cart_items/:id/edit', to: 'cart_items#edit', as: 'cart_item_edit'
 
+  # Payments
+  get 'checkout', to: 'payment#new', as: 'new_payment'
+  post 'payments', to: 'payment#create', as: 'create_payment'
+
+  # Reviews
   get 'items/:item_id/reviews', to: 'reviews#index', as: 'item_reviews'
   post 'items/:item_id/reviews', to: 'reviews#create'
   get 'items/:item_id/reviews/new', to: 'reviews#new', as: 'new_item_review'
   # get 'items/:item_id/reviews', to: 'reviews#show', as: 'item_review'
 
+  # Users
   get 'users', to: 'users#index', as: 'users'
   get 'user/edit', to: 'users#edit', as: 'edit_user'
   get 'users/:id', to: 'users#show', as: 'user'
   patch 'user_profile', to: 'users#update_profile', as: 'user_profile_update'
-  get 'users/:id/billing', to: 'users#billing', as: 'billing_user'
   get 'user', to: 'users#profile', as: 'user_profile'
   patch 'user', to: 'users#update', as: 'user_update'  
 

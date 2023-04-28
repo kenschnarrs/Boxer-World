@@ -25,13 +25,21 @@ class Item < ApplicationRecord
         dependent:   :destroy
       )
 
-      has_many(
-        :cart_items,
-        class_name:  'CartItem',
-        foreign_key: 'item_id',
-        inverse_of:  :item,
-        dependent:   :destroy
-      )
+    has_many(
+      :cart_items,
+      class_name:  'CartItem',
+      foreign_key: 'item_id',
+      inverse_of:  :item,
+      dependent:   :destroy
+    )
+
+    has_many(
+      :payment_items,
+      class_name:  'PaymentItem',
+      foreign_key: 'item_id',
+      inverse_of:  :item,
+      dependent:   :destroy
+    )
 
     #   validates :reviews, presence: true
 

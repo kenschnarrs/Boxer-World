@@ -40,6 +40,15 @@ class PaymentController < ApplicationController
                     item: cart_item.item,
                     quantity: cart_item.quantity
                 )
+
+                item = cart_item.item
+
+                if cart_item.quantity <= item.num_in_stock
+                    item.update(num_in_stock: item.num_in_stock - cart_item.quantity)
+                else
+                    raise "Item #{item.name} is out of stock."
+                end
+
             end
             puts "Created all payment items"
     

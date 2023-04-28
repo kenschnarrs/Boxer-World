@@ -21,8 +21,10 @@ Rails.application.routes.draw do
   post 'items/:id/add_to_cart', to: 'cart_items#create', as: 'add_to_cart'
 
   # Cart Items
-  get '/cart_items/:id/edit', to: 'cart_items#edit', as: 'cart_item_edit'
-  delete '/cart_items/:id/', to: 'cart_items#delete', as: 'cart_item'
+  get '/cart_items/:id/edit', to: 'cart_items#edit', as: 'cart_items_edit'
+  delete '/cart_items/:id/', to: 'cart_items#delete', as: 'cart_items'
+  patch '/cart_items/:id/', to: 'cart_items#update'
+
 
   # Payments
   get 'checkout', to: 'payment#new', as: 'new_payment'

@@ -11,8 +11,10 @@ class CartItemsController < ApplicationController
         cart_item = current_user.cart.cart_items.find_by(item_id: item_id)
         
         if cart_item.present?
-            cart_item.quantity += 1
-            cart_item.save
+            if cart_item.quantity + 1 <= cart_item.item.num_in_stock
+                cart_item.quantity += 1
+                cart_item.save
+            end
         else
             cart_item = current_user.cart.cart_items.build(item_id: item_id)
         end
@@ -33,9 +35,18 @@ class CartItemsController < ApplicationController
     end
 
     def edit
+        @cart_item = CartItem.find(params[:id])
         render :edit
     end
 
     def update
+        @cart_item = CartItem.find(params[:id])
+        if @cart_item.update(params.require(:cart_item).permit(:quantity))
+            flash[:success] = 'Cart item amount successfully updated!'
+            redirect_to cart_url
+        else
+            flash.now[:error] = 'Cart item update failed'
+            render :edit, status: :unprocessable_entity
+        end
     end
 end

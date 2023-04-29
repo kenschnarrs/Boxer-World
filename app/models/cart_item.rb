@@ -36,5 +36,13 @@ class CartItem < ApplicationRecord
 
   validates :item, presence: true
   validates :cart, presence: true
+  validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1, only_integer: true}
 
+  validate :valid_quantity
+  
+  def valid_quantity
+    if item.num_in_stock < quantity
+      errors.add(:quantity, "cannot be greater than item stock")
+    end
+  end
 end

@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   post 'items/:item_id/reviews', to: 'reviews#create'
   get 'items/:item_id/reviews/new', to: 'reviews#new', as: 'new_item_review'
   # get 'items/:item_id/reviews', to: 'reviews#show', as: 'item_review'
+  delete 'items/:item_id/reviews/:id', to: 'reviews#destroy', as: 'delete_item_review'
 
   # Users
   #get 'users', to: 'users#index', as: 'users'

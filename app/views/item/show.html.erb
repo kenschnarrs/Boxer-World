@@ -7,10 +7,18 @@
     <%= image_tag @item.picture %>
   </div>
   <div class="column">
-        <h3>Description</h3>
-        <p style="font-size: 18px;"><%= @item.description %></p>
-        <%= link_to 'Reviews', item_reviews_path(@item), class: 'btn btn-outline-secondary btn-lg'%>
-        <%= link_to 'Add To Cart',  add_to_cart_path(@item.id), data: { "turbo-method": :post }, class: 'btn btn-outline-primary btn-lg' %>
+    <h3>Description</h3>
+    <p style="font-size: 18px;"><%= @item.description %></p>
+    <ul>
+      <li>Amount in stock: <%= @stock %></li>
+    </ul>
+    <%= link_to 'Reviews', item_reviews_path(@item), class: 'btn btn-outline-secondary btn-lg'%>
+    <% if @stock >= 1 %>
+      <%= link_to 'Add To Cart', add_to_cart_path(@item.id), data: { "turbo-method": :post }, class: 'btn btn-outline-primary btn-lg' %>
+    <% else %>
+      <br></br>
+      <div>We don't have enough stock for you to add this item to your cart right now.</div>
+    <% end %>  
   </div>
 </div>
 

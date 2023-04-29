@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   get 'boxing_gloves', to: 'pages#boxing_gloves', as: 'boxing_gloves'
   get 'punching_bags', to: 'pages#punching_bags', as: 'punching_bags'
   get 'apparel', to: 'pages#apparel', as: 'apparel'
+  get 'search', to: 'pages#search', as: 'search'
 
   # Item
-  get 'search', to: 'item#search', as: 'search'
-  #get 'items', to: 'items#index', as: 'items'
   get 'items/:id', to: 'item#show', as: 'item'
+  # get 'items', to: 'items#index', as: 'items'
 
   # Cart
   get 'cart', to: 'carts#show', as: 'cart'
@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   get '/cart_items/:id/edit', to: 'cart_items#edit', as: 'cart_items_edit'
   delete '/cart_items/:id/', to: 'cart_items#delete', as: 'cart_items'
   patch '/cart_items/:id/', to: 'cart_items#update'
-
 
   # Payments
   get 'checkout', to: 'payment#new', as: 'new_payment'
@@ -37,10 +36,9 @@ Rails.application.routes.draw do
   # get 'items/:item_id/reviews', to: 'reviews#show', as: 'item_review'
 
   # Users
-  #get 'users', to: 'users#index', as: 'users'
-  #get 'users/:id', to: 'users#show', as: 'user'
-  get 'user', to: 'users#profile', as: 'user_profile'
   get 'user/edit', to: 'users#edit', as: 'edit_user'
   patch 'user', to: 'users#update', as: 'user_update'
+  get 'users', to: 'users#index', as: 'users'
+  get 'users/:id', to: 'users#show', as: 'user'
   
 end

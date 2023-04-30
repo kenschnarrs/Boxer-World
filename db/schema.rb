@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_28_082840) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_29_010602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,6 +72,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_082840) do
     t.string "description", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "wishlist_id"
+    t.index ["wishlist_id"], name: "index_items_on_wishlist_id"
   end
 
   create_table "payment_items", force: :cascade do |t|
@@ -153,14 +155,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_082840) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wishlists", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_wishlists_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "items"
   add_foreign_key "carts", "users"
+  add_foreign_key "items", "wishlists"
   add_foreign_key "payment_items", "items"
   add_foreign_key "payment_items", "payments"
   add_foreign_key "payments", "users"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"
+  add_foreign_key "wishlists", "users"
 end

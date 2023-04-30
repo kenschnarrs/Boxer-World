@@ -14,6 +14,15 @@
 #  size         :string           default(""), not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  wishlist_id  :bigint
+#
+# Indexes
+#
+#  index_items_on_wishlist_id  (wishlist_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (wishlist_id => wishlists.id)
 #
 
 one:

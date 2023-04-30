@@ -41,5 +41,6 @@ Rails.application.routes.draw do
   patch 'user', to: 'users#update', as: 'user_update'
   get 'users', to: 'users#index', as: 'users'
   get 'users/:id', to: 'users#show', as: 'user'
-  
+  get 'user', to: 'users#default_show', as: 'user_default'
+
 end

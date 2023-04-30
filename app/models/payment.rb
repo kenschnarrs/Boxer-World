@@ -59,7 +59,6 @@ class Payment < ApplicationRecord
     validates :country, presence: true
 
     validates :cvc, presence: true, numericality: { only_integer: true }, format: { with: /\A\d{3,4}\z/, message: "must be a valid cvc" }
-    validates :zip_code, length: { is: 5 }, numericality: { only_integer: true }
 
     validates :exp_month, presence: true, format: { with: /\A\d{1,2}\z/ }, 
         numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 12, only_integer: true}

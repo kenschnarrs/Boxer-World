@@ -10,6 +10,14 @@ class UsersController < ApplicationController
         render :index
     end
 
+    # this should resolve a weird error that occurs sometimes
+    def default_show
+      @user = current_user
+      @is_me = true
+
+      render :show
+    end
+
     def show
         @user = User.find(params[:id])
         @is_me = @user.id == current_user.id

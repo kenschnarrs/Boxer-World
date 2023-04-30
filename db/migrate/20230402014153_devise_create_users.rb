@@ -9,15 +9,15 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
     
 
       ## Identifying fields
-      t.string :name, null: false, default: ""
-      t.string :username, null: false, default: ""
-      t.string :address, null: false, default: ""
-      t.string :phone, null: false, default: ""
-      t.text :blurb, null: false, default: ""
-      t.bigint :card_num, null: false, default: 0
-      t.integer :cvc, null: false, default: 0
-      t.integer :exp_month, null: false, default: 0
-      t.integer :exp_year, null: false, default: 0
+      t.string :name, null: false, default: "Mike Tyson"
+      t.string :username, null: false, default: "miketyson45"
+      t.string :address, null: false, default: "Mike Tyson Rd, Mike Tyson Town, USA"
+      t.string :phone, null: false, default: "1234567890"
+      t.text :blurb, null: false, default: "I'm Mike Tyson!"
+      t.bigint :card_num, null: false, default: 5218215677349869
+      t.integer :cvc, null: false, default: 999
+      t.integer :exp_month, null: false, default: 11
+      t.integer :exp_year, null: false, default: 2029
       
       ## Recoverable
       t.string   :reset_password_token

@@ -8,8 +8,8 @@
 
       <th>Rating</th>
       <th>Comment</th>
-      <th> User Name</th>
-      <th> </th>
+      <th>Username</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -18,8 +18,19 @@
       <tr>
         <td><%=review.rating %></td>
         <td><%=review.review_text %></td>
-        <td><%=review.user.email%></td>
-        <td><%= button_to 'Delete Comment', delete_item_review_path(@item, review), method: :delete, data: { turbo: false }, class: 'btn btn-outline-secondary btn-sm', form: { class: 'd-inline' } %></td>
+        <td><%=review.user.username%></td>
+        <td>
+        <% unless @user.nil? %>
+          <% if review.user.id == @user.id %>
+            <%= button_to 'Delete Comment', delete_item_review_path(@item, review), 
+              method: :delete, data: { turbo: false }, 
+              class: 'btn btn-outline-secondary btn-sm', 
+              form: { class: 'd-inline' } 
+            %>
+          <% end %>
+        <% end %>
+
+        </td>
       </tr>
     <% end %>
 

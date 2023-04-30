@@ -40,4 +40,15 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def destroy
+      @item = Item.find(params[:item_id])
+      @review = @item.reviews.find(params[:id])
+      @review.destroy
+      flash[:success] = "Review deleted successfully"
+      redirect_to item_reviews_url(@item), status: :see_other
+    end
+  
+
+
+
 end

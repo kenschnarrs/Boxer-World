@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
 
 
     def index
+        @user = current_user
         @item = Item.find(params[:item_id])
         @reviews = @item.reviews
         render :index
@@ -41,11 +42,26 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-      @item = Item.find(params[:item_id])
-      @review = @item.reviews.find(params[:id])
-      @review.destroy
-      flash[:success] = "Review deleted successfully"
-      redirect_to item_reviews_url(@item), status: :see_other
+      unless current_user.nil?
+        @item = Item.find(params[:item_id])
+        @review = @item.reviews.find(params[:id])
+
+        if @review.user_id == current_user.id
+          @review.destroy
+          flash[:success] = "Review deleted successfully"
+          @item = Item.find(params[:item_id])
+          @reviews = @item.reviews
+          render :index, status: :see_other
+        else
+          flash[:error] = "You do not have permission to do that. (Code 1)"
+          @item = Item.find(params[:item_id])
+          @reviews = @item.reviews
+          render :index, status: :unprocessable_entity
+        end
+      else
+        flash[:error] = "You do not have permission to do that. (Code 2)"
+        redirect_to root_path, status: :unprocessable_entity
+      end
     end
   
 

@@ -1,27 +1,25 @@
-<head>
-    <title> Settings</title>
-  
-  </head>
-<h1> Settings </h1>
-<strong>  You can Change your Settings Here </strong> 
+
+<h1> Site Users list </h1>
 
 <table class="table table-hover">
   <thead class="table-dark">
     <tr>
       <th>Name</th>
-      <th>Profile</th>
-      <th>Settings</th>
-      <th>Billing</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name%></td>
-        <td><%= link_to 'Profile', user_path(user) %></td>
-        <td><%= link_to 'Settings', edit_user_path(user)%></td>
-        <td><%= link_to "Billing", billing_user_path(user) %></td>
-      </tr>
+      <% unless user.id == @current_user.id%>
+        <tr>
+          <td><%= user.last_name%>, <%= user.first_name%></td>
+          <td><%= user.username%></td>
+          <td><%= user.email%></td>
+          <td><%= link_to "View Profile", user_path(user)%></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

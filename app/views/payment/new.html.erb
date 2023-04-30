@@ -34,7 +34,8 @@
             Total: <%=number_to_currency(total * 1.125 + 5)%>
           </p>
           <%= link_to 'Back to Cart', cart_path, class: 'btn btn-outline-danger btn-lg' %>
-          <%= f.submit "Place Order", class: "btn btn-success btn-lg" %>
+          <%= f.submit "Place Order", class: "btn btn-success btn-lg",
+          data: { confirm: "Are you sure you want to checkout?", turbo_confirm: "Are you sure you want to checkout?" } %>
       </div>
     </div>
   <% end %>

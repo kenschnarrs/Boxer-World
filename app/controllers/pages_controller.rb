@@ -6,6 +6,14 @@ class PagesController < ApplicationController
         render :home
     end
 
+    def search
+        @query = params[:query].downcase
+        @items = Item.where("lower(name) LIKE ?", "%#{@query}%")
+        @category = "SEARCH RESULTS: " + @query
+        @info = "Below are the results of your query."
+        render :category
+    end
+
     def boxing_gloves
         @items = Item.where(category: "Boxing Gloves")
         @category = "Boxing Gloves"

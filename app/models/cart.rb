@@ -18,11 +18,17 @@
 #
 class Cart < ApplicationRecord
     belongs_to(
-        :user,
-        class_name:  'User',
-        foreign_key: 'user_id',
-        inverse_of:  :cart
-      )
-    has_many :cart_items
+      :user,
+      class_name:  'User',
+      foreign_key: 'user_id',
+      inverse_of:  :cart
+    )
+    has_many(
+      :cart_items,
+      class_name:  'CartItem',
+      foreign_key: 'cart_id',
+      inverse_of:  :cart,
+      dependent:   :destroy
+  )
     has_many :items, through: :cart_items
 end

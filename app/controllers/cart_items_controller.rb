@@ -7,23 +7,49 @@ class CartItemsController < ApplicationController
             current_user.cart = Cart.new
         end
 
-        item_id = params[:id]
-        cart_item = current_user.cart.cart_items.find_by(item_id: item_id)
+        error_msg = "Error adding item to cart."
         
+        puts "Looking for item"
+        item = Item.find(params[:id])
+        item_id = params[:id]
+
+        puts "Looking for item in cart"
+        cart_item = current_user.cart.cart_items.find_by(item_id: item_id)
+        canSave = true
+        puts "Checking whether the item exists in cart"
         if cart_item.present?
+            
+            puts "Item is currently in cart"
+
+            puts "Checking whether there's enough in stock to add the item..."
             if cart_item.quantity + 1 <= cart_item.item.num_in_stock
+                puts "There is enough in stock."
+
                 cart_item.quantity += 1
                 cart_item.save
+
+                puts "Added to quantity"
+            else
+                puts "There is NOT enough in stock"
+                error_msg = "We don't have enough items in stock for you to add it to your cart right now."
+                canSave = false
             end
         else
+
+            puts "Item is NOT currently in cart"
+            puts "Building item..."
             cart_item = current_user.cart.cart_items.build(item_id: item_id)
+            puts "Item built"
         end
         
-        if cart_item.save
+        puts "Finishing up"
+        if cart_item.save && canSave
+            puts "Saving"
             flash[:success] = "Item added to cart!"
             redirect_to cart_path
         else
-            redirect_to root_path, alert: 'Error adding item to cart.'
+            puts "Showing error message"
+            redirect_to item_path(item), alert: error_msg
         end
     end
 

@@ -11,6 +11,7 @@ class PaymentController < ApplicationController
         render :new
     end
 
+    # This action processes a checkout.
     def create
         @user = current_user
 
@@ -30,27 +31,39 @@ class PaymentController < ApplicationController
                 :state,
                 :country
             ))
-            puts "Built payment"
-    
-            puts "Creating payment items..."
-            current_user.cart.cart_items.each do |cart_item|
-                
-                puts "Building payment item..."
-                @payment.payment_items.build(
-                    item: cart_item.item,
-                    quantity: cart_item.quantity
-                )
+            puts "Finished"
 
-                item = cart_item.item
+            puts "Seeing if payment build succeeded.."
+            if @payment.save
+                puts "Creating payment items..."
+                current_user.cart.cart_items.each do |cart_item|
+                    
+                    puts "Building payment item..."
+                    payment_item = @payment.payment_items.build(
+                        item: cart_item.item,
+                        quantity: cart_item.quantity
+                    )
+                    puts "Save:"
+                    puts payment_item.save
 
-                if cart_item.quantity <= item.num_in_stock
-                    item.update(num_in_stock: item.num_in_stock - cart_item.quantity)
-                else
-                    raise "Item #{item.name} is out of stock."
+                    if payment_item.save
+                        item = cart_item.item
+
+                        puts "Seeing if there is enough stock"
+                        if cart_item.quantity <= item.num_in_stock
+                            puts "There is, updating"
+                            item.update(num_in_stock: item.num_in_stock - cart_item.quantity)
+                        else
+                            puts "Not enough stock!"
+                            raise "Item #{item.name} does not have enough stock."
+                        end
+                    end
+
                 end
-
+                puts "Created all payment items"
+            else
+                puts "No payment, not creating any items"
             end
-            puts "Created all payment items"
     
             puts "Evaluating save"
             if @payment.save

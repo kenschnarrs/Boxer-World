@@ -3,13 +3,24 @@ class UsersController < ApplicationController
 #Calvin Gott -  created the User Contrller class, to have User Actions
     before_action :authenticate_user!
 
+    # List of profiles on the site
     def index
         @users = User.order(:email)
+        @current_user = current_user
         render :index
     end
 
+    # this should resolve a weird error that occurs sometimes
+    def default_show
+      @user = current_user
+      @is_me = true
+
+      render :show
+    end
+
     def show
-        @user = current_user
+        @user = User.find(params[:id])
+        @is_me = @user.id == current_user.id
         render :show
     end
 
@@ -18,21 +29,15 @@ class UsersController < ApplicationController
         render :edit
     end
 
-    # This is the currently used update method.
     def update
         if current_user.update(user_update_params)
           flash[:success] = 'Updated successfully!'
-          redirect_to user_profile_path
+          redirect_to user_path(current_user)
         else
           flash.now[:error] = 'Your update failed!'
           @user = current_user
           render :edit, status: :unprocessable_entity
         end
-    end
-
-    def profile
-      @user = current_user
-      render :profile
     end
 
     private

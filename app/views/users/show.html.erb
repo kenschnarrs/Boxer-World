@@ -25,6 +25,11 @@
         <div class="card mb-4 mb-lg-0">
           <div class="card-body p-0">
             Order History
+            <% if current_user.payments.present? %>
+                <p><%= link_to "Payments", payments_path %></p>
+            <% else %>
+              <p class="text-center">No orders yet</p>
+            <% end %> 
           </div>
         </div>
       </div>

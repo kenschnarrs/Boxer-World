@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   # Payments
   get 'checkout', to: 'payment#new', as: 'new_payment'
   post 'payments', to: 'payment#create', as: 'create_payment'
+  get 'payments/:id', to: 'payment#show', as: 'payment'
+  get 'payments', to: 'payment#index', as: 'payments'
 
   # Reviews
   get 'items/:item_id/reviews', to: 'reviews#index', as: 'item_reviews'

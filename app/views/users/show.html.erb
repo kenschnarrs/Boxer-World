@@ -80,7 +80,7 @@
                 <% if current_user.wishlists.present? %>
                   <ul class="list-group">
                     <% current_user.wishlists.each do |wishlist| %>
-                  <li class="list-group-item"><%= link_to wishlist.name, user_wishlist_path(current_user, wishlist) %></li>
+                  <li class="list-group-item"><%= link_to wishlist.name, root_path %></li>
               <% end %>
             </ul>
           <% else %>

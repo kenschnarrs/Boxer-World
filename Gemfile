@@ -95,3 +95,5 @@ gem 'devise'
 
 # Font Awesome for icons
 gem "font-awesome-sass", "~> 6.4.0"
+# Ransack Gem
+gem 'ransack', github: 'activerecord-hackery/ransack'

@@ -8,26 +8,65 @@
     <p><%= @info%></p>
 </div>
 
-<div style="display: flex;">
-  <div style="width: 20%;">
-    <h3>Filter</h3>
-  </div>
-  <div style="width: 80%;">
-    <h3>Products</h3>
-    <div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-gap: 10px;" >
-        <% for item in @items %>
-            <div class="p-3">
-              <%= link_to item_path(item) do %>
-                    <div class="card" style="width: 9rem; height: 16rem;">
-                        <%= image_tag(item.picture, class: 'img-thumbnail', alt: item.name) %>
-                        <div class="card-body d-flex justify-content-center align-items-center flex-column">
-                            <%= link_to item.name, item_path(item), class: "card-title text-center" %>
-                            <%= number_to_currency(item.price) %>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
+<div class="row"><!---- Filter ---->
+  <div class="col-md-3">
+    <h3>Filter By Brands</h3>
+    <%= form_tag '', method: :get do %>
+      <% Item.select(:brand).where(in_stock: true).distinct.each do |item| %>
+        <label>
+          <%= check_box_tag "brands[]", item.brand, @_brands&.include?(item.brand) %>
+          <%= item.brand %>
+        </label>
+        <br>
+      <% end %>
+       <br>
+     </br>
+      <h3> Filter By Stock </h3>
+      <label>
+      <%= check_box_tag "in_stock", 1, @in_stock == "1" %>
+      Only show items in stock
+      </label>
+       <br>
+    </br>
+      <%= submit_tag "Filter" ,class: 'btn btn-outline-secondary btn-lg'%>
+    <% end %>
+    <br>
+     <h3>Sort by:</h3>
+    <%= link_to "Name (A-Z)", {sort: "name_asc", brands: params[:brands],in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+    <br>
+    <%= link_to "Name (Z-A)", {sort: "name_desc", brands: params[:brands],in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+    <br>
+    <%= link_to "Price (Low to High)", {sort: "price_asc", brands: params[:brands],in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+    <br>
+    <%= link_to "Price (High to Low)", {sort: "price_desc", brands: params[:brands],in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+    <br>
+
+</div> <!----Dont go past ---->
+
+  <div class="col-md-9">
+    <div>
+      <div style ="width: 80%;">
+        <h3>Products</h3>
+        <% if @in_stock == "1" %>
+            <p><%= @in_stock_count %> items in stock</p>
         <% end %>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-gap: 10px;" >
+            <% for item in @items %>
+                <div class="p-3">
+                  <%= link_to item_path(item) do %>
+                        <div class="card" style="width: 9rem; height: 16rem;">
+                            <%= image_tag(item.picture, class: 'img-thumbnail', alt: item.name) %>
+                            <div class="card-body d-flex justify-content-center align-items-center flex-column">
+                                <%= link_to item.name, item_path(item), class: "card-title text-center" %>
+                                <%= number_to_currency(item.price) %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+

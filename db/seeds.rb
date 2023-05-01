@@ -76,7 +76,7 @@ item2 = Item.create!(
     category: "Boxing Gloves",
     size: "Small",
     isFeatured: true,
-    num_in_stock: 50,
+    num_in_stock: 0,
     price: 30.00,
     rating: 0,
     description: "BOOM BOOM Boxing Youth Gear is engineered and crafted exclusively for youths and young training demands.  Injected molded foam technology provides high density sponge foam that delivers a lighter, anatomically correct, internal core for maximum comfort and fist protection. Pre-curved design allows young hands to sit in a natural position causing less hand fatigue and extended workouts. 360-degree extra-wide wraparound wrist strap with hook-and-loop closure assures a secure, no-slip, custom fit for every child.  Easy on and off.  Satin nylon hand liner is extremely comfortable and repels moisture absorption inside the gloves. Ideal for all heavy bag training, bag work, punch mitts and more."
@@ -124,7 +124,7 @@ item5 = Item.create!(
 # Item 6
 item6 = Item.create!(
   name: "Golden Foam Gloves",
-  brand: "Title ",
+  brand: "Title",
   category: "Boxing Gloves",
   size: "Large",
   isFeatured: false,
@@ -136,7 +136,7 @@ item6 = Item.create!(
 
 item7 = Item.create!(
     name: "Pro Style Gloves",
-    brand: "Title ",
+    brand: "Title",
     category: "Boxing Gloves",
     size: "Large",
     isFeatured: false,
@@ -148,7 +148,7 @@ item7 = Item.create!(
 
 item8 = Item.create!(
     name: "Viper Training Gloves",
-    brand: "Title ",
+    brand: "Title",
     category: "Boxing Gloves",
     size: "Large",
     isFeatured: false,
@@ -160,7 +160,7 @@ item8 = Item.create!(
 
 item9 = Item.create!(
     name: "Gel Training Gloves",
-    brand: "Title ",
+    brand: "Title",
     category: "Boxing Gloves",
     size: "Small",
     isFeatured: false,
@@ -172,7 +172,7 @@ item9 = Item.create!(
 
 item10 = Item.create!(
     name: "Supreme  Gloves",
-    brand: "Title ",
+    brand: "Title",
     category: "Boxing Gloves",
     size: "Medium",
     isFeatured: false,
@@ -184,7 +184,7 @@ item10 = Item.create!(
 
 item11 = Item.create!(
     name: "Pro Fight Gloves",
-    brand: "Title ",
+    brand: "Title",
     category: "Boxing Gloves",
     size: "Medium",
     isFeatured: false,
@@ -196,7 +196,7 @@ item11 = Item.create!(
 
 item12 = Item.create!(
     name: "Black Gloves",
-    brand: "Adidas ",
+    brand: "Adidas",
     category: "Boxing Gloves",
     size: "Medium",
     isFeatured: false,
@@ -208,7 +208,7 @@ item12 = Item.create!(
 
 item13 = Item.create!(
     name: "Inferno Intensity Gloves",
-    brand: "Title ",
+    brand: "Title",
     category: "Boxing Gloves",
     size: "Medium",
     isFeatured: false,
@@ -220,7 +220,7 @@ item13 = Item.create!(
 
 item14 = Item.create!(
     name: "Lava Gel Gloves",
-    brand: "Title ",
+    brand: "Title",
     category: "Boxing Gloves",
     size: "Small",
     isFeatured: false,
@@ -232,7 +232,7 @@ item14 = Item.create!(
 
 item15 = Item.create!(
     name: "White Gloves",
-    brand: "Title ",
+    brand: "Title",
     category: "Boxing Gloves",
     size: " Extra Small",
     isFeatured: false,

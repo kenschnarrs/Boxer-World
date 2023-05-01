@@ -10,6 +10,7 @@
       <th>Comment</th>
       <th>Username</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -22,7 +23,7 @@
         <td>
         <% unless @user.nil? %>
           <% if review.user.id == @user.id %>
-            <%= button_to 'Delete Comment', delete_item_review_path(@item, review), 
+            <%= button_to 'Delete', delete_item_review_path(@item, review), 
               method: :delete, data: { turbo: false }, 
               class: 'btn btn-outline-secondary btn-sm', 
               form: { class: 'd-inline' } 
@@ -30,6 +31,15 @@
           <% end %>
         <% end %>
 
+        </td>
+
+        <td>
+        <% unless @user.nil? %>
+        <% if review.user.id == @user.id %>
+        <%= link_to 'Edit', edit_item_review_path(@item, review), class: 'btn btn-outline-secondary btn-sm' %>
+        <% end %>
+        <% end %>
+        
         </td>
       </tr>
     <% end %>

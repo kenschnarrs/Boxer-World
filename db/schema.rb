@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_29_010602) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_01_062614) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_29_010602) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "wishlist_id"
+    t.boolean "in_stock", default: true
     t.index ["wishlist_id"], name: "index_items_on_wishlist_id"
   end
 

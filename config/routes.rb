@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   # Pages
   get 'home', to: 'pages#home', as: 'home'
+  get 'index', to: 'pages#index'
   get 'boxing_gloves', to: 'pages#boxing_gloves', as: 'boxing_gloves'
   get 'punching_bags', to: 'pages#punching_bags', as: 'punching_bags'
   get 'apparel', to: 'pages#apparel', as: 'apparel'
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
 
   # Item
   get 'items/:id', to: 'item#show', as: 'item'
-  # get 'items', to: 'items#index', as: 'items'
+  get 'items', to: 'items#index', as: 'items'
 
   # Cart
   get 'cart', to: 'carts#show', as: 'cart'

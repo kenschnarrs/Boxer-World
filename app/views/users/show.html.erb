@@ -26,11 +26,7 @@
           <div class="card-body p-0">
             Order History
             <% if current_user.payments.present? %>
-                  <ul class="list-group">
-                    <% current_user.payments.each do |pay| %>
-                  <li class="list-group-item">Stuff</li>
-              <% end %>
-            </ul>
+                <p><%= link_to "Payments", payments_path %></p>
             <% else %>
               <p class="text-center">No orders yet</p>
             <% end %> 

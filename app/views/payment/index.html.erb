@@ -1,0 +1,21 @@
+<h1>Order History</h1>
+
+<div class="row">
+  <div class="col-xl-4 col-lg-6 mb-4">
+        <% @payments.each do |payment| %>
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                            <p class="fw-bold mb-1">Order id: <%= payment.id %></p>
+                            <p class="text-muted mb-0"><%= payment.created_at.strftime("%b, %d %Y %l:%M %p %Z")%></p>
+                            <br>
+                            <%= link_to "View Order", payment_path(payment), class: "btn btn-primary" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        <% end %>
+  </div>
+</div>

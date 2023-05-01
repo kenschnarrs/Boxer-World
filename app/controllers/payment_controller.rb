@@ -10,7 +10,7 @@ class PaymentController < ApplicationController
 
     def show
         @user = current_user
-        @payment = Payment.find(params[:id])
+        @payment = current_user.payments.find(params[:id])
         @payment_items = @payment.payment_items
         render :show
     end

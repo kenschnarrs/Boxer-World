@@ -3,6 +3,17 @@ class ReviewsController < ApplicationController
 
     before_action :authenticate_user!, except: [:index]
 
+    before_action :require_permission, except: [:index, :show, :new, :create]
+
+    def require_permission
+      @item = Item.find(params[:item_id])
+      @review = @item.reviews.find(params[:id])
+      if @review.user != current_user
+        flash[:error] = 'You do not have permission to do that.'
+        redirect_to item_reviews_path(@review)
+      end
+    end
+
     # def show
     #     @item = Item.find(params[:item_id])
     #     @review = @item.reviews.find(params[:id])
@@ -53,7 +64,7 @@ class ReviewsController < ApplicationController
       @review = @item.reviews.find(params[:id])
       if @review.update(params.require(:review).permit(:rating, :review_text))
         flash[:success] = "Review updated successfully"
-        redirect_to item_reviews_url(@item, @review)
+        redirect_to item_reviews_url(@item)
       else
         flash.now[:error] = "Review could not be updated"
         render :edit, status: :unprocessable_entity

@@ -41,6 +41,27 @@ class ReviewsController < ApplicationController
         end
     end
 
+
+    def edit
+      @item = Item.find(params[:item_id])
+      @review = @item.reviews.find(params[:id])
+      render :edit
+    end
+
+    def update
+      @item= Item.find(params[:item_id])
+      @review = @item.reviews.find(params[:id])
+      if @review.update(params.require(:review).permit(:rating, :review_text))
+        flash[:success] = "Review updated successfully"
+        redirect_to item_reviews_url(@item, @review)
+      else
+        flash.now[:error] = "Review could not be updated"
+        render :edit, status: :unprocessable_entity
+      end
+    end
+
+
+
     def destroy
       unless current_user.nil?
         @item = Item.find(params[:item_id])

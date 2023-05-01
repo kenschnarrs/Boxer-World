@@ -47,4 +47,10 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'users#show', as: 'user'
   get 'user', to: 'users#default_show', as: 'user_default'
 
+  # ------------- Wishlist ------------
+  get 'user/:user_id/wishlists', to: 'wishlist#index', as: 'user_wishlists'
+  post 'user/:user_id/wishlists', to: 'wishlist#create'
+  get 'user/:user_id/wishlists/new', to: 'wishlist#new', as: 'new_user_wishlist'
+  get 'user/:user_id/wishlists/:id', to: 'wishlist#show', as: 'user_wishlist'
+
 end

@@ -1,0 +1,15 @@
+<h1>Wishlists</h1>
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Wishlist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @wishlists.each do |wishlist| %>
+      <tr>
+        <td><%= wishlist.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

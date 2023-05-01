@@ -19,6 +19,20 @@
       <br></br>
       <div>We don't have enough stock for you to add this item to your cart right now.</div>
     <% end %>  
+    <br>
+      <% if current_user %>
+        <% if @wishlists.empty? %>
+          <p>No wishlists? Go make one!</p>
+        <% else %>
+          <%= form_tag add_to_wishlist_path, method: :post, remote: true do %>
+          <%= label_tag :wishlist_id, "Add to Wishlist" %>
+          <%= select_tag :wishlist_id, options_for_select(current_user.wishlists.collect { |w| [w.name, w.id] }), include_blank: true, class: 'form-select mb-2', style: 'width: 200px;'  %>
+          <%= hidden_field_tag :item_id, @item.id %>
+          <%= submit_tag "Add to Wishlist", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
   </div>
 </div>
 

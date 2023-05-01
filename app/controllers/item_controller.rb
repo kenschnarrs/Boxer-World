@@ -1,11 +1,11 @@
 class ItemController < ApplicationController
     
     def show
-
         @item = Item.find(params[:id])
         @stock = @item.num_in_stock
 
         unless current_user.nil?
+            @wishlists = current_user.wishlists
             if current_user.cart.nil?
                 current_user.cart = Cart.new
             else

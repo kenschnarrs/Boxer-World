@@ -53,4 +53,11 @@ Rails.application.routes.draw do
   get 'user/:user_id/wishlists/new', to: 'wishlist#new', as: 'new_user_wishlist'
   get 'user/:user_id/wishlists/:id', to: 'wishlist#show', as: 'user_wishlist'
 
+  # Wishlist Items
+  resources :items do
+    post 'add_to_wishlist', on: :member
+  end
+
+  post 'items/:id/add_to_wishlist', to: 'wishlist_items#create', as: 'add_to_wishlist'
+
 end

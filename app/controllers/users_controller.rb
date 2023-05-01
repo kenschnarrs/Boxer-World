@@ -19,9 +19,16 @@ class UsersController < ApplicationController
     end
 
     def show
+      if current_user
+        @payments = current_user.payments
         @user = User.find(params[:id])
         @is_me = @user.id == current_user.id
         render :show
+      else
+        @user = User.find(params[:id])
+        @is_me = @user.id == current_user.id
+        render :show
+      end
     end
 
     def edit

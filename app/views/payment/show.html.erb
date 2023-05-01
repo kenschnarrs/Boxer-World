@@ -1,0 +1,46 @@
+<section class="h-100 h-custom" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card border-top border-bottom border-3">
+          <div class="card-body p-5">
+            <p class="lead fw-bold mb-5">Purchase Reciept</p>
+
+            <div class="row">
+              <div class="col mb-3">
+                <p class="small text-muted mb-1">Date</p>
+                <p><%= @payment.created_at.strftime("%b, %d %Y %l:%M %p %Z")%></p>
+              </div>
+              <div class="col mb-3">
+                <p class="small text-muted mb-1">Order No.</p>
+                <p><%= @payment.id %></p>
+              </div>
+            </div>
+            <div class="mx-n5 px-5 py-4" style="background-color: #f2f2f2;">
+              <div class="row">
+              <!-- Start of the items -->
+              <% @payment_items.each do |payment_item| %>
+                <div class="col-md-8 col-lg-9">
+                  <p><%= payment_item.quantity %>x <%= payment_item.item.name %></p>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                  <p><%= number_to_currency(payment_item.item.price) %></p>
+                </div>
+                <% end %>
+                <% total_price = 0 %>
+                    <% @payment_items.each do |payment_item| %>
+                    <% total_price += payment_item.item.price %>
+                <% end %>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-md-4 offset-md-8 col-lg-3 offset-lg-9">
+                <p class="lead fw-bold mb-0"><%= number_to_currency(total_price) %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

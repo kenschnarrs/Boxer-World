@@ -1,6 +1,20 @@
 class PaymentController < ApplicationController
     before_action :authenticate_user!
 
+
+    def index
+        @user = current_user
+        @payments = current_user.payments
+        render :index
+    end
+
+    def show
+        @user = current_user
+        @payment = current_user.payments.find(params[:id])
+        @payment_items = @payment.payment_items
+        render :show
+    end
+
     def new
         if current_user.cart.nil?
             current_user.cart = Cart.new

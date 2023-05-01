@@ -25,6 +25,15 @@
         <div class="card mb-4 mb-lg-0">
           <div class="card-body p-0">
             Order History
+            <% if current_user.payments.present? %>
+                  <ul class="list-group">
+                    <% current_user.payments.each do |pay| %>
+                  <li class="list-group-item">Stuff</li>
+              <% end %>
+            </ul>
+            <% else %>
+              <p class="text-center">No orders yet</p>
+            <% end %> 
           </div>
         </div>
       </div>

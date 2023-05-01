@@ -19,17 +19,7 @@
 #  fk_rails_...  (wishlist_id => wishlists.id)
 #
 class WishlistItem < ApplicationRecord
-    belongs_to(
-    :cart,
-    class_name:  'Wishlist',
-    foreign_key: 'wishlist_id',
-    inverse_of:  :wishlist_items
-  )
 
-  belongs_to(
-    :item,
-    class_name:  'Item',
-    foreign_key: 'item_id',
-    inverse_of:  :wishlist_items
-  )
+  belongs_to :wishlist
+  belongs_to :item
 end

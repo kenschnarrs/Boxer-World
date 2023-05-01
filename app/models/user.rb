@@ -45,13 +45,7 @@
 #
 class User < ApplicationRecord
   
-  has_many(
-        :wishlists,
-        class_name:  'Wishlist',
-        foreign_key: 'user_id',
-        inverse_of:  :user,
-        dependent:   :destroy
-    )
+  has_many :wishlists, dependent: :destroy
 
   before_create :set_defaults
   

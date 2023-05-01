@@ -18,19 +18,7 @@
 #
 class Wishlist < ApplicationRecord
 
-  belongs_to(
-      :user,
-      class_name:  'User',
-      foreign_key: 'user_id',
-      inverse_of:  :wishlist
-    )
-
-    has_many(
-      :wishlist_items,
-      class_name:  'WishlistItem',
-      foreign_key: 'wishlist_id',
-      inverse_of:  :wishlist,
-      dependent:   :destroy
-  )
+  belongs_to :user
+  has_many :wishlist_items
   
 end

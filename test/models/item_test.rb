@@ -6,7 +6,6 @@
 #  brand        :string           default(""), not null
 #  category     :string           default(""), not null
 #  description  :string           default(""), not null
-#  in_stock     :boolean          default(TRUE)
 #  isFeatured   :boolean          default(FALSE), not null
 #  name         :string           default(""), not null
 #  num_in_stock :integer          default(0), not null

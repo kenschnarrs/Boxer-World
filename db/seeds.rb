@@ -207,7 +207,7 @@ item12 = Item.create!(
 )
 
 item13 = Item.create!(
-    name: "Inferno Intensity Gloves",
+    name: "Inferno Gloves",
     brand: "Title",
     category: "Boxing Gloves",
     size: "Medium",

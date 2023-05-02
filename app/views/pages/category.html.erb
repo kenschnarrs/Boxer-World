@@ -8,47 +8,57 @@
     <p><%= @info%></p>
 </div>
 
-<div class="row"><!---- Filter ---->
+<div class="row">
+  <!---- Filterering and Sorting ---->
   <div class="col-md-3">
     <h3>Filter By Brands</h3>
-    <%= form_tag '', method: :get do %>
-      <% Item.select(:brand).where(in_stock: true).distinct.each do |item| %>
+    <%= form_tag @current_path, method: :get do %>
+      <% if @mode == "search" %>
+        <%= hidden_field_tag "query", params[:query] %>
+      <% end %>
+      <% @items_distinct_brands.each do |item| %>
         <label>
-          <%= check_box_tag "brands[]", item.brand, @_brands&.include?(item.brand) %>
+          <%= check_box_tag "brands[]", item.brand, @brands&.include?(item.brand) %>
           <%= item.brand %>
         </label>
         <br>
       <% end %>
-       <br>
-     </br>
-      <h3> Filter By Stock </h3>
+      <br>
+      <h3>Filter By Stock</h3>
       <label>
-      <%= check_box_tag "in_stock", 1, @in_stock == "1" %>
-      Only show items in stock
+        <%= check_box_tag "in_stock", 1, @in_stock == "1" %>
+        Only show items in stock
       </label>
-       <br>
-    </br>
+      <br></br>
       <%= submit_tag "Filter" ,class: 'btn btn-outline-secondary btn-lg'%>
     <% end %>
-    <br>
-     <h3>Sort by:</h3>
-    <%= link_to "Name (A-Z)", {sort: "name_asc", brands: params[:brands],in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
-    <br>
-    <%= link_to "Name (Z-A)", {sort: "name_desc", brands: params[:brands],in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
-    <br>
-    <%= link_to "Price (Low to High)", {sort: "price_asc", brands: params[:brands],in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
-    <br>
-    <%= link_to "Price (High to Low)", {sort: "price_desc", brands: params[:brands],in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
-    <br>
-
-</div> <!----Dont go past ---->
-
+    <br></br>
+    <h3>Sort By:</h3>
+    <% if @mode == "normal" %>
+      <%= link_to "Name (A-Z)", {sort: "name_asc", brands: params[:brands], in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+      <br></br>
+      <%= link_to "Name (Z-A)", {sort: "name_desc", brands: params[:brands], in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+      <br></br>
+      <%= link_to "Price (Low to High)", {sort: "price_asc", brands: params[:brands], in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+      <br></br>
+      <%= link_to "Price (High to Low)", {sort: "price_desc", brands: params[:brands], in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+    <% else %>
+      <%= link_to "Name (A-Z)", {query: params[:query], sort: "name_asc", brands: params[:brands], in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+      <br></br>
+      <%= link_to "Name (Z-A)", {query: params[:query], sort: "name_desc", brands: params[:brands], in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+      <br></br>
+      <%= link_to "Price (Low to High)", {query: params[:query], sort: "price_asc", brands: params[:brands], in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+      <br></br>
+      <%= link_to "Price (High to Low)", {query: params[:query], sort: "price_desc", brands: params[:brands], in_stock: params[:in_stock]}, class: "btn btn-outline-secondary btn-lg" %>
+    <% end %>
+  </div>
+  <!---- Displayed items ---->
   <div class="col-md-9">
     <div>
       <div style ="width: 80%;">
         <h3>Products</h3>
         <% if @in_stock == "1" %>
-            <p><%= @in_stock_count %> items in stock</p>
+          <i><%= @in_stock_count %> unique products in stock.</i>
         <% end %>
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-gap: 10px;" >
             <% for item in @items %>

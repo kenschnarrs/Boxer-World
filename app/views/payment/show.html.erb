@@ -24,12 +24,12 @@
                   <p><%= payment_item.quantity %>x <%= payment_item.item.name %></p>
                 </div>
                 <div class="col-md-4 col-lg-3">
-                  <p><%= number_to_currency(payment_item.item.price) %></p>
+                  <p><%= number_to_currency(payment_item.price) %></p>
                 </div>
                 <% end %>
                 <% total_price = 0 %>
-                    <% @payment_items.each do |payment_item| %>
-                    <% total_price += payment_item.item.price %>
+                <% @payment_items.each do |payment_item| %>
+                  <% total_price += payment_item.price %>
                 <% end %>
               </div>
             </div>

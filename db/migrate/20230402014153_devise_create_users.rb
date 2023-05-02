@@ -12,7 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :name, null: false, default: "Default Name"
       t.string :username, null: false, default: "New User"
       t.string :address, null: false, default: "Default rd, Default town, Default Country"
-      t.string :phone, null: false, default: ""
+      t.string :phone, null: false, default: "0000000000"
       t.text :blurb, null: false, default: ""
       t.bigint :card_num, null: true, default: 1000000000000000
       t.integer :cvc, null: true, default: 999

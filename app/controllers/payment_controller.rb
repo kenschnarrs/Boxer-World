@@ -53,8 +53,10 @@ class PaymentController < ApplicationController
                 current_user.cart.cart_items.each do |cart_item|
                     
                     puts "Building payment item..."
+                    
                     payment_item = @payment.payment_items.build(
                         item: cart_item.item,
+                        price: cart_item.item.price, # This "freezes" the price in time in case price change occurs.
                         quantity: cart_item.quantity
                     )
                     puts "Save:"

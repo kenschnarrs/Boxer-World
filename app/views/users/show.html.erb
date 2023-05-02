@@ -76,11 +76,11 @@
           <div class="col-md-6">
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1">Wishlist</p>
+                <p class="mb-4"><span class="text-primary font-italic me-1"> Show Wishlist</p>
                 <% if current_user.wishlists.present? %>
                   <ul class="list-group">
                     <% current_user.wishlists.each do |wishlist| %>
-                  <li class="list-group-item"><%= link_to wishlist.name, root_path %></li>
+                  <li class="list-group-item"><%= link_to wishlist.name, user_wishlist_path(wishlist) %></li>
               <% end %>
             </ul>
           <% else %>

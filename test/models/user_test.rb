@@ -3,38 +3,38 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
-#  apt_num                :integer          default(100), not null
-#  blurb                  :text             default("I'm Mike Tyson!"), not null
-#  card_num               :bigint           default(5218215677349869), not null
-#  city                   :string           default("Champ city"), not null
+#  apt_num                :integer          default(100)
+#  blurb                  :text             default(""), not null
+#  card_num               :bigint           default(1000000000000000)
+#  city                   :string           default("")
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
-#  country                :string           default("Champ Country"), not null
+#  country                :string           default("")
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
-#  cvc                    :integer          default(999), not null
+#  cvc                    :integer          default(999)
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
-#  exp_month              :integer          default(11), not null
-#  exp_year               :integer          default(2029), not null
+#  exp_month              :integer          default(11)
+#  exp_year               :integer          default(2029)
 #  failed_attempts        :integer          default(0), not null
-#  first_name             :string           default("Mike"), not null
-#  last_name              :string           default("Tyson"), not null
+#  first_name             :string           default("")
+#  last_name              :string           default("")
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string
 #  locked_at              :datetime
-#  phone                  :string           default("1234567890"), not null
+#  phone                  :string           default("0000000000"), not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  sign_in_count          :integer          default(0), not null
-#  state                  :string           default("Champ State"), not null
-#  street_address         :string           default("Champ St"), not null
+#  state                  :string           default("")
+#  street_address         :string           default("")
 #  unconfirmed_email      :string
 #  unlock_token           :string
-#  username               :string           default("miketyson45"), not null
-#  zip_code               :integer          default(12345), not null
+#  username               :string           default("New User"), not null
+#  zip_code               :integer          default(99999)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #

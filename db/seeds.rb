@@ -24,7 +24,7 @@ user0 = User.create!(
     zip_code: 12345,
     state: "Champs State",
     country: "Champs Country",
-    blurb: "Hi, I\'m Joe.",
+    blurb: "Hi! I am the greatest boxer of all time.",
     card_num: 4929530607600026,
     exp_month: 12,
     exp_year: 2024,

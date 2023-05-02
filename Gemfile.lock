@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: dbffa8bed3e4cad9d7f51cd9233466ae4b68fb4d
+  specs:
+    ransack (4.0.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
+
+GIT
   remote: https://github.com/thomaspark/bootswatch.git
   revision: 7bf861b9531ac7d79e655165c9bd65686668a13e
   specs:
@@ -285,6 +294,7 @@ DEPENDENCIES
   pgreset
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
+  ransack!
   redis (~> 4.0)
   selenium-webdriver
   sprockets-rails

@@ -1,5 +1,5 @@
 class ItemController < ApplicationController
-    
+   
     def show
         @item = Item.find(params[:id])
         @stock = @item.num_in_stock

@@ -242,8 +242,248 @@ item15 = Item.create!(
     description:"The TITLE WHITE equipment line is an elaborate equipment series that takes you to the edge with precision king cut double-ply full grain leathers, brilliant and luxurious patent leathers and extra deep pile suede leathers that complement each other in a rich compilation of premier quality, clout and exclusive membership. A heavy-duty nylon mesh upper palm inset allows air release during intense workouts."
 )
 
+item16 = Item.create!(
+    name: "Greatest Heavy Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: " Extra Small",
+    isFeatured: false,
+    num_in_stock: 41,
+    price: 153.00,
+    rating: 8.9,
+    description: "TITLE unveils the Greatest Heavy Bag Ever with this elaborate, stylish, full-body heavy bag crafted for every punch, strike, combination, kick and more with incredible resistance and crafted for less swinging and movement. Packed with shredded fabric that keeps the bag from sagging or settling. A center aligned weight is precision placed for maximum force dispersion and balance while providing ideal impact and life-like striking surface feel, without sacrificing quality. A tough Terpoline synthetic leather cover is tough and durable for maximum results."
+)
 
 
+item17 = Item.create!(
+    name: "Double End Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: "Small",
+    isFeatured: false,
+    num_in_stock: 81,
+    price: 79.00,
+    rating: 8.9,
+    description: "Top-grade, all-leather shell with triple nylon stitched, leather welted seams for professional results. Ideal for throwing all punches, slipping, counter punching and reflex training! Extra-long 3.5” twin-ply leather attachment straps, with heavy-duty chrome O-rings on top and bottom have hook-and-loop security in the center - with an inset zipper closure on top - to easily and conveniently get to inside butyl rubber bladder, if needed."
+)
+
+item18 = Item.create!(
+    name: "Premier Punching Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: "Small",
+    isFeatured: false,
+    num_in_stock: 20,
+    price: 164.00,
+    rating: 8.9,
+    description: "Engineered with luxurious 1.75 mm calf split buff imported premium leather for the ultimate heavy bag training experience. Premium leather cover is incredibly strong and resilient, yet with a more plush, comfortable feel. Specially blended poly-fiber filler is professionally packed to extend resilient shock absorbency. Center aligned weight is precision placed for maximum force dispersion and balance."
+)
+
+item19 = Item.create!(
+    name: "Classic Speed Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: "Small",
+    isFeatured: false,
+    num_in_stock: 4,
+    price: 67.00,
+    rating: 8.9,
+    description: "Tough, super fast and lightweight leather build. All-leather welted seams, triple stitched and precision balanced for true rebounds. Loop is extra-reinforced for long wear. Complete with extended-life rubber bladder. "
+)
+
+item20 = Item.create!(
+    name: "Next Gen Speed Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: "Small",
+    isFeatured: false,
+    num_in_stock: 134,
+    price: 82.00,
+    rating: 5.9,
+    description:"Super-fast, precision balanced speed bag is crafted from quality leather, with triple stitched seams, and double welded loop for professional action and results. Complete with a butyl rubber bladder for long life and rapid rebounds."
+)
+
+item21 = Item.create!(
+    name: "Adjustable Speed Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: "Medium",
+    isFeatured: false,
+    num_in_stock: 104,
+    price: 280.00,
+    rating: 5.9,
+    description: "Extra heavy-duty steel frame is built for industrial gym use and professional workouts. High density 24 inch diameter walnut laminated wood platform is built for solid, lightning quick and true rebounds. Includes solid steel chrome guide shafts and precision 14 inch worm drive height adjustment, which makes it perfect for all athletes from kids to adults."
+)
+
+
+item22 = Item.create!(
+    name: "Ali Punching Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: "Medium",
+    isFeatured: false,
+    num_in_stock: 57,
+    price: 380.00,
+    rating: 5.9,
+    description:"Authentic, vintage recreation of the 100% genuine heavy bag that used to hang in Muhammad Ali’s world famous Deer Lake Training Camp in Pennsylvania. Luxurious old school silver/gold and rich oxblood red color combination was a staple of the Ali’s training and generation. Professionally stuffed and packed with shredded poly fiber material with a center placed weight for balance and professional training results. "
+)
+
+item23 = Item.create!(
+    name: "Cus Amato Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: "Medium",
+    isFeatured: false,
+    num_in_stock: 77,
+    price: 297.00,
+    rating: 9.9,
+    description: "Develop the impetuous training style of legends with the CUS D’Amato Willie Heavy Bag. Patterned from the revolutionary wall mounted bag created by world renowned trainer, Cus D’Amato, with the printed numbering system used to call out specific punch combinations. "
+)
+
+
+item24 = Item.create!(
+    name: "Platinum Speed Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: "Medium",
+    isFeatured: false,
+    num_in_stock: 11,
+    price: 63.00,
+    rating: 8.9,
+    description: "A Momentous Speed bag constructed of genuine leather and silver synthetic panels that are great for visibility. This bag has a precise shape and a lightweight design that creates a fast, perfect rebound after every strike."
+)
+
+item25 = Item.create!(
+    name: "White Speed Bag",
+    brand: "Title",
+    category: "Punching Bags",
+    size: "Medium",
+    isFeatured: false,
+    num_in_stock: 27,
+    price: 55.00,
+    rating: 8.9,
+    description: "Nothing beats the clean, crisp look of the TITLE White line. Constructed with a thick combination of matte, suede and luxurious patent leather accents. Features an easy-access air valve to re-inflating. Double-stitched, welted seams, plus an additional layer of leather around the striking area, increases durability."
+)
+
+item26 = Item.create!(
+    name: "Black  Trunks",
+    brand: "Title",
+    category: "Apparel",
+    size: "Small",
+    isFeatured: false,
+    num_in_stock: 17,
+    price: 30.00,
+    rating: 3.9,
+    description:"The TITLE Edge Boxing Trunks 2.0 are perfect for stepping into the ring with the winning edge. These boxing trunks are constructed from 100% polyester and are fully machine washable."
+)
+
+item27 = Item.create!(
+    name: "USA Badge Tee",
+    brand: "Title",
+    category: "Apparel",
+    size: "Large",
+    isFeatured: false,
+    num_in_stock: 2,
+    price: 31.00,
+    rating: 5.9,
+    description: "1x1 baby rib-knit set-in collar. Tear-away label"
+)
+
+item28 = Item.create!(
+    name: "Black Sauna Suit",
+    brand: "Title",
+    category: "Apparel",
+    size: "Large",
+    isFeatured: false,
+    num_in_stock: 300,
+    price: 99.00,
+    rating: 5.9,
+    description: "Incredible tri-layered rip-stop rubberized nylon set offers athletes an extremely comfortable and stylish super intense sauna action suit. Complete set includes both hooded pullover top and pro pants. The hood conveniently stows away inside the collar for easy access when needed. The pants have an extra-wide elastic waistband with inside drawstring waist for maximum security."
+)
+
+item29 = Item.create!(
+    name: "Vintage Corner Jacket",
+    brand: "Title",
+    category: "Apparel",
+    size: "Extra Large",
+    isFeatured: false,
+    num_in_stock: 30,
+    price: 35.00,
+    rating: 7.9,
+    description: "Throw it back to the days when corner men were dressed cool and classy. 100% poly/satin material for optimal comfort and performance. Contrasting colors and trim provide better matching colors to fighter’s outfits and provide standout style. "
+)
+
+item30 = Item.create!(
+    name: "Duran Hand Wraps",
+    brand: "Title",
+    category: "Apparel",
+    size: "Large",
+    isFeatured: false,
+    num_in_stock: 500,
+    price: 9.00,
+    rating: 9.9,
+    description: "With the TITLE Roberto Duran Hand Wraps, you can throw blows with the ferocity of the Panamanian legend who captured the hearts of an entire country and the imaginations of boxing fans worldwide. The hand wraps are made from elastic spandex/polyester blend that provides a form-fitting wrap with just the right amount of security that allows you to punch with confidence. "
+)
+
+item31 = Item.create!(
+    name: "Quality Goods Tee",
+    brand: "Title",
+    category: "Apparel",
+    size: "Medium",
+    isFeatured: false,
+    num_in_stock: 2,
+    price: 25.00,
+    rating: 6.9,
+    description: "A classic TITLE look made with a soft, polyester blend that dries quickly. The tee is slightly stretchy for a comfortable fit. "
+)
+
+item32 = Item.create!(
+    name: "Kronk Detroit Tee",
+    brand: "Title",
+    category: "Apparel",
+    size: "Large",
+    isFeatured: false,
+    num_in_stock: 2,
+    price: 31.00,
+    rating: 5.9,
+    description: "Smooth Yellow Shirt"
+)
+
+item33 = Item.create!(
+    name: "Boxing Boxer Briefs",
+    brand: "Title",
+    category: "Apparel",
+    size: "Large",
+    isFeatured: false,
+    num_in_stock: 12,
+    price: 15.00,
+    rating: 8.9,
+    description: "Put your big boy pants on and get ready to battle. The TITLE Boxing Boxer Briefs are constructed out of a thick yet stretchable material that makes them perfect to wear every day, for weigh-ins, in the gym, as compression shorts and even as Vale Tudo shorts! "
+)
+
+item34 = Item.create!(
+    name: "Light Full Zip",
+    brand: "Title",
+    category: "Apparel",
+    size: "Large",
+    isFeatured: false,
+    num_in_stock: 32,
+    price: 21.00,
+    rating: 9.4,
+    description: "100% lightweight Polyester with French Fleece lining. Full zip front."
+)
+
+item35 = Item.create!(
+    name: "Boxing Thermal Pants",
+    brand: "Title",
+    category: "Apparel",
+    size: "Large",
+    isFeatured: false,
+    num_in_stock: 2,
+    price: 30.00,
+    rating: 5.8,
+    description: "In the beginning there was Thermal Wear! TITLE Boxing Thermal Wear Pants provide warmth and allows you to break a sweat just like fighters of the past. Made from a breathable cotton/poly blend, this pant is stretchy and absorbent. The elastic waistband provides a secure fit for any type of training. "
+)
 
 
 
@@ -335,4 +575,123 @@ item15.picture.attach(
     content_type: 'image/jpeg'
 )
 
+item16.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'p1.jpeg')), 
+    filename: 'p1.jpeg', 
+    content_type: 'image/jpeg'
+)
 
+item17.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'double.jpeg')), 
+    filename: 'double.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item18.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'premier.jpeg')), 
+    filename: 'premier.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item19.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'classic.jpeg')), 
+    filename: 'classic.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item20.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'gen.jpeg')), 
+    filename: 'gen.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item21.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'premier.jpeg')), 
+    filename: 'premier.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item22.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'ali.jpeg')), 
+    filename: 'ali.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item23.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'amato.jpeg')), 
+    filename: 'amato.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item24.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'plat.jpeg')), 
+    filename: 'plat.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item25.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'wspeed.jpeg')), 
+    filename: 'wspeed.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item26.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'trunks.jpeg')), 
+    filename: 'trunks.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item27.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'usa.jpeg')), 
+    filename: 'usa.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item28.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'sauna.jpeg')), 
+    filename: 'sauna.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item29.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'corner.jpeg')), 
+    filename: 'corner.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+
+item30.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'wraps.jpeg')), 
+    filename: 'wraps.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item31.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'tee.jpeg')), 
+    filename: 'tee.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item32.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'detroit.jpeg')), 
+    filename: 'detroit.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item33.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'briefs.jpeg')), 
+    filename: 'briefs.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item34.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'zip.jpeg')), 
+    filename: 'zip.jpeg', 
+    content_type: 'image/jpeg'
+)
+
+item35.picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'thermal.jpeg')), 
+    filename: 'thermal.jpeg', 
+    content_type: 'image/jpeg'
+)

@@ -3,8 +3,15 @@ class WishlistController < ApplicationController
 
     def index
         @user = current_user
+        @user = User.find(params[:user_id])
         @wishlists = @user.wishlists
-        render :index
+            render :index
+    end
+
+    def show
+        @wishlist = current_user.wishlists.find(params[:id])
+        render :show
+
     end
 
     def new

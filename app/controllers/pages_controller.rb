@@ -96,7 +96,7 @@ class PagesController < ApplicationController
         @current_path = ""
         @mode = "normal"
         @items = Item.where(category: "Punching bags")
-        @category = "Punching Bags"
+        @category = "Punching bags"
         @info = "Built to last."
 
         if params[:brands].present?

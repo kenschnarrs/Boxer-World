@@ -1,9 +1,11 @@
 class WishlistController < ApplicationController
+    before_action :authenticate_user!
+
     def index
         @user = current_user
         @user = User.find(params[:user_id])
         @wishlists = @user.wishlists
-        render :index
+            render :index
     end
 
     def show
@@ -15,7 +17,7 @@ class WishlistController < ApplicationController
     def new
         @user = User.find(params[:user_id])
         @wishlist = Wishlist.new
-    render :new
+        render :new
     end
 
     def create

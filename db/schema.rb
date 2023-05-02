@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_01_062614) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_02_054339) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,7 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_062614) do
     t.string "description", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "in_stock", default: true
   end
 
   create_table "payment_items", force: :cascade do |t|
@@ -81,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_062614) do
     t.bigint "payment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
     t.index ["item_id"], name: "index_payment_items_on_item_id"
     t.index ["payment_id"], name: "index_payment_items_on_payment_id"
   end
@@ -118,13 +118,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_062614) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "username", default: "miketyson45", null: false
-    t.string "phone", default: "1234567890", null: false
-    t.text "blurb", default: "I'm Mike Tyson!", null: false
-    t.bigint "card_num", default: 5218215677349869, null: false
-    t.integer "cvc", default: 999, null: false
-    t.integer "exp_month", default: 11, null: false
-    t.integer "exp_year", default: 2029, null: false
+    t.string "username", default: "New User", null: false
+    t.string "phone", default: "0000000000", null: false
+    t.text "blurb", default: "", null: false
+    t.bigint "card_num", default: 1000000000000000
+    t.integer "cvc", default: 999
+    t.integer "exp_month", default: 11
+    t.integer "exp_year", default: 2029
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -142,14 +142,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_062614) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name", default: "Mike", null: false
-    t.string "last_name", default: "Tyson", null: false
-    t.string "street_address", default: "Champ St", null: false
-    t.string "city", default: "Champ city", null: false
-    t.string "state", default: "Champ State", null: false
-    t.integer "zip_code", default: 12345, null: false
-    t.string "country", default: "Champ Country", null: false
-    t.integer "apt_num", default: 100, null: false
+    t.string "first_name", default: ""
+    t.string "last_name", default: ""
+    t.string "street_address", default: ""
+    t.string "city", default: ""
+    t.string "state", default: ""
+    t.integer "zip_code", default: 99999
+    t.string "country", default: ""
+    t.integer "apt_num", default: 100
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

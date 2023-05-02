@@ -3,6 +3,7 @@
 # Table name: payment_items
 #
 #  id         :bigint           not null, primary key
+#  price      :integer
 #  quantity   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

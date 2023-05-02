@@ -17,14 +17,14 @@ user0 = User.create!(
     last_name: "Tyson",
     username: "The Ice Sickle",
     email: "mike@email.com",
-    phone:"901-555-5555",
+    phone:"9015555555",
     password:"something",
     street_address: "Champs Lane",
     city: "Champs City",
     zip_code: 12345,
     state: "Champs State",
     country: "Champs Country",
-    blurb: "Hi, I\'m Joe.",
+    blurb: "Hi! I am the greatest boxer of all time.",
     card_num: 4929530607600026,
     exp_month: 12,
     exp_year: 2024,
@@ -40,7 +40,7 @@ user1 = User.create!(
     last_name: "Tyson",
     username: "Iron Mike",
     email: "MikeTysonGOAT@email.com",
-    phone:"929-292-5555",
+    phone:"9292925555",
     password:"Password",
     street_address: "Champs Lane",
     city: "Champs City",
@@ -75,7 +75,7 @@ item2 = Item.create!(
     brand: "Boom Boom",
     category: "Boxing Gloves",
     size: "Small",
-    isFeatured: true,
+    isFeatured: false,
     num_in_stock: 0,
     price: 30.00,
     rating: 0,
@@ -207,7 +207,7 @@ item12 = Item.create!(
 )
 
 item13 = Item.create!(
-    name: "Inferno Intensity Gloves",
+    name: "Inferno Gloves",
     brand: "Title",
     category: "Boxing Gloves",
     size: "Medium",
@@ -245,7 +245,7 @@ item15 = Item.create!(
 item16 = Item.create!(
     name: "Greatest Heavy Bag",
     brand: "Title",
-    category: "Punching Bags",
+    category: "Punching bags",
     size: " Extra Small",
     isFeatured: false,
     num_in_stock: 41,
@@ -258,7 +258,7 @@ item16 = Item.create!(
 item17 = Item.create!(
     name: "Double End Bag",
     brand: "Title",
-    category: "Punching Bags",
+    category: "Punching bags",
     size: "Small",
     isFeatured: false,
     num_in_stock: 81,
@@ -270,7 +270,7 @@ item17 = Item.create!(
 item18 = Item.create!(
     name: "Premier Punching Bag",
     brand: "Title",
-    category: "Punching Bags",
+    category: "Punching bags",
     size: "Small",
     isFeatured: false,
     num_in_stock: 20,
@@ -281,8 +281,8 @@ item18 = Item.create!(
 
 item19 = Item.create!(
     name: "Classic Speed Bag",
-    brand: "Title",
-    category: "Punching Bags",
+    brand: "Rival",
+    category: "Punching bags",
     size: "Small",
     isFeatured: false,
     num_in_stock: 4,
@@ -293,8 +293,8 @@ item19 = Item.create!(
 
 item20 = Item.create!(
     name: "Next Gen Speed Bag",
-    brand: "Title",
-    category: "Punching Bags",
+    brand: "Rival",
+    category: "Punching bags",
     size: "Small",
     isFeatured: false,
     num_in_stock: 134,
@@ -306,10 +306,10 @@ item20 = Item.create!(
 item21 = Item.create!(
     name: "Adjustable Speed Bag",
     brand: "Title",
-    category: "Punching Bags",
+    category: "Punching bags",
     size: "Medium",
     isFeatured: false,
-    num_in_stock: 104,
+    num_in_stock: 0,
     price: 280.00,
     rating: 5.9,
     description: "Extra heavy-duty steel frame is built for industrial gym use and professional workouts. High density 24 inch diameter walnut laminated wood platform is built for solid, lightning quick and true rebounds. Includes solid steel chrome guide shafts and precision 14 inch worm drive height adjustment, which makes it perfect for all athletes from kids to adults."
@@ -319,7 +319,7 @@ item21 = Item.create!(
 item22 = Item.create!(
     name: "Ali Punching Bag",
     brand: "Title",
-    category: "Punching Bags",
+    category: "Punching bags",
     size: "Medium",
     isFeatured: false,
     num_in_stock: 57,
@@ -331,7 +331,7 @@ item22 = Item.create!(
 item23 = Item.create!(
     name: "Cus Amato Bag",
     brand: "Title",
-    category: "Punching Bags",
+    category: "Punching bags",
     size: "Medium",
     isFeatured: false,
     num_in_stock: 77,
@@ -344,7 +344,7 @@ item23 = Item.create!(
 item24 = Item.create!(
     name: "Platinum Speed Bag",
     brand: "Title",
-    category: "Punching Bags",
+    category: "Punching bags",
     size: "Medium",
     isFeatured: false,
     num_in_stock: 11,
@@ -356,9 +356,9 @@ item24 = Item.create!(
 item25 = Item.create!(
     name: "White Speed Bag",
     brand: "Title",
-    category: "Punching Bags",
+    category: "Punching bags",
     size: "Medium",
-    isFeatured: false,
+    isFeatured: true,
     num_in_stock: 27,
     price: 55.00,
     rating: 8.9,
@@ -370,8 +370,8 @@ item26 = Item.create!(
     brand: "Title",
     category: "Apparel",
     size: "Small",
-    isFeatured: false,
-    num_in_stock: 17,
+    isFeatured: true,
+    num_in_stock: 0,
     price: 30.00,
     rating: 3.9,
     description:"The TITLE Edge Boxing Trunks 2.0 are perfect for stepping into the ring with the winning edge. These boxing trunks are constructed from 100% polyester and are fully machine washable."
@@ -439,7 +439,7 @@ item31 = Item.create!(
 
 item32 = Item.create!(
     name: "Kronk Detroit Tee",
-    brand: "Title",
+    brand: "Kronk",
     category: "Apparel",
     size: "Large",
     isFeatured: false,

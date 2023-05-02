@@ -19,6 +19,16 @@
       <br></br>
       <div>We don't have enough stock for you to add this item to your cart right now.</div>
     <% end %>  
+    <br>
+      <% if current_user %>
+        <% if @wishlists.empty? %>
+          <p>No wishlists? Go make one!</p>
+        <% else %>
+        <br>
+          <button class='btn btn-outline-secondary btn-lg disabled'>Add to Wishlist</button>
+        <% end %>
+      <% end %>
+      </div>
   </div>
 </div>
 

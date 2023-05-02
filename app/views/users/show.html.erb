@@ -77,6 +77,19 @@
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
                 <p class="mb-4"><span class="text-primary font-italic me-1">Wishlist</p>
+                <% if current_user.wishlists.present? %>
+                  <ul class="list-group">
+                    <% current_user.wishlists.each do |wishlist| %>
+                  <li class="list-group-item"><%= link_to wishlist.name, root_path %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>You don't have any wishlists yet. Start by creating one below.</p>
+          <% end %>
+                <br>
+                <p>
+                  <%= link_to "New Wishlist", new_user_wishlist_path(@user), class: "btn btn-secondary"%>
+                </p>
             </div>
           </div>
         </div>

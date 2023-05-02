@@ -44,6 +44,8 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
+  
+  has_many :wishlists, dependent: :destroy
 
   before_create :set_defaults
   

@@ -1,0 +1,6 @@
+<h1>Create New Wishlist</h1>
+
+<%= bootstrap_form_with model: @wishlist, method: :post, url: user_wishlists_path(@user), data: { turbo: false } do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

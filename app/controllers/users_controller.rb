@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
     def show
       if current_user
+        @wishlists = current_user.wishlists
         @payments = current_user.payments
         @user = User.find(params[:id])
         @is_me = @user.id == current_user.id
